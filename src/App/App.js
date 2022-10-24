@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import MainLayout from "../LayOut/MainLayout";
-import Header from "../LayOut/Header";
-import Footer from "../LayOut/Footer";
-import HomePage from "../Pages/HomePage/HomePage";
+import { Route, Routes } from 'react-router-dom';
+import MainLayout from '../LayOut/MainLayout';
+import Header from '../LayOut/Header';
+import Footer from '../LayOut/Footer';
+import HomePage from '../Pages/HomePage/HomePage';
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
 // import AllProduct from "../Pages/ProductPage/AllProduct";
@@ -22,7 +22,7 @@ import HomePage from "../Pages/HomePage/HomePage";
 // import UploadTest from "../Pages/uploadTest/index";
 // import NewLogin from "../Pages/Login/newLogin";
 // import Store from "../Pages/Store/Store";
-// import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path='/' element={<HomePage />}></Route>
           {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>

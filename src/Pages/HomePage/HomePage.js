@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Test } from '../../common/component';
+import styled from "styled-components";
+import { InputBox, TitleBox } from "../../common/component";
 
 // 홈페이지
 const MainBox = styled.main`
@@ -13,7 +13,10 @@ const HomePage = () => {
   return (
     <>
       <MainBox>안녕!</MainBox>
-      <Test type={'email'}>인풋</Test>
+      <InputBox type={"email"}>인풋</InputBox>
+      <TitleBox>
+        이름<span>*</span>
+      </TitleBox>
     </>
   );
 };

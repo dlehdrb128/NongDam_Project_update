@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-// import MainLayout from "../LayOut/MainLayout";
-// import Header from "../LayOut/Header";
-// import Footer from "../LayOut/Footer";
-// import HomePage from "../Pages/HomePage/HomePage";
+import MainLayout from "../LayOut/MainLayout";
+import Header from "../LayOut/Header";
+import Footer from "../LayOut/Footer";
+import HomePage from "../Pages/HomePage/HomePage";
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
 // import AllProduct from "../Pages/ProductPage/AllProduct";
@@ -29,8 +29,9 @@ function App() {
     <>
       <Routes>
         <Route element={<MainLayout />}>
-          {/* <Route element={<Header />} />
+          <Route element={<Header />} />
           <Route path="/" element={<HomePage />}></Route>
+          {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>
           <Route path="/intro" element={<Intro />}></Route>
@@ -56,7 +57,6 @@ function App() {
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/upload" element={<UploadTest />}></Route>
           <Route path="/store/detail/:id" element={<Store />}></Route> */}
-
           <Route element={<Footer />} />
         </Route>
       </Routes>

@@ -3,8 +3,12 @@ import MainLayout from "../LayOut/MainLayout";
 import Header from "../LayOut/Header";
 import Footer from "../LayOut/Footer";
 import HomePage from "../Pages/HomePage/HomePage";
-import Test2 from "../Pages/Recipe/recipe";
-
+import Recipe from "../Pages/Recipe/recipe";
+import RecipeCreateReview from "../Pages/Recipe/recipeCreateReview";
+import RecipeReview from "../Pages/Recipe/recipeReview";
+import Login from "../Pages/Login/login";
+import SignUp from "../Pages/SignUp/signUp";
+import SignUpEnd from "../Pages/SignUp/signUpEnd";
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
 // import AllProduct from "../Pages/ProductPage/AllProduct";
@@ -33,7 +37,16 @@ function App() {
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/Test" element={<Test2 />}></Route>
+          <Route path="/recipe" element={<Recipe />}></Route>
+          <Route
+            path="/recipeCreateReview"
+            element={<RecipeCreateReview />}
+          ></Route>
+          <Route path="/recipe/post/:id" element={<RecipeReview />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signUp" element={<SignUp />}></Route>
+          <Route path="/signUpEnd" element={<SignUpEnd />}></Route>
+
           {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>
@@ -44,7 +57,6 @@ function App() {
           <Route path="/admin/create" element={<StoreOpenMain />}></Route>
           <Route path="/signUp" element={<SignUp></SignUp>}></Route>
           <Route path="/signUpEnd" element={<SignUpEnd />}></Route>
-          <Route path="/recipe" element={<Recipe />}></Route>
           <Route
             path="/recipeCreateReview"
             element={<RecipeCreateReview />}

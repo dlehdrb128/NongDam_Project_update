@@ -2,7 +2,6 @@ import styled from "styled-components";
 import SetSidemenu from "../../common/SetSidemenu";
 import SetMypageTop from "../../common/SetMypageTop";
 import SetMypageList from "../../common/SetMypageList";
-
 import SellerInfo from "../../common/SellerInfo";
 
 // 홈페이지
@@ -21,7 +20,6 @@ const MainBox = styled.main`
 const HomePage = () => {
   return (
     <>
-      <MainBox>안녕!</MainBox>
       <div>
         <SetMypageTop />
         <SetSidemenu Text={"그냥만듬"}></SetSidemenu>

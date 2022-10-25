@@ -11,6 +11,7 @@ import {
   ProductTop,
   UndefinedBox,
 } from "../../common/AllProduct";
+import Sort from "../../common/sort";
 
 const AllProduct = () => {
   const [params, setParams] = useState({
@@ -122,29 +123,7 @@ const AllProduct = () => {
         ) : (
           <div>{data.length}개의 상품이 있습니다</div>
         )}
-        <div>
-          <div
-            onClick={() => {
-              setParams({ ...params, sort: "new" });
-            }}
-          >
-            최신순
-          </div>
-          <div
-            onClick={() => {
-              setParams({ ...params, sort: "highPrice" });
-            }}
-          >
-            가격높은순
-          </div>
-          <div
-            onClick={() => {
-              setParams({ ...params, sort: "lowPrice" });
-            }}
-          >
-            가격낮은순
-          </div>
-        </div>
+        <Sort params={params} setParams={setParams}></Sort>
       </ProductSortBox>
       <ProductBox>
         {loading === true ? (

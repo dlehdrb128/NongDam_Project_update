@@ -99,22 +99,4 @@ export const ProductSortBox = styled.div`
     font-family: "SCD-6";
     font-size: 2rem;
   }
-
-  & > div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    color: ${({ theme }) => theme.lightblack};
-    gap: 45px;
-
-    & > div:hover {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    & > div {
-      font-family: "SCD-4";
-      font-size: 1.5rem;
-      padding-right: 20px;
-    }
-  }
 `;

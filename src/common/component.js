@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Theme from "../Theme/theme";
-const ButtonStyled = styled.button`
+
+export const ButtonStyled = styled.button`
   /* 버튼 */
   width: ${(props) => props.width || "150px"};
   height: ${(props) => props.height || "40px"};
@@ -129,42 +130,7 @@ export const ShortsInput = styled.input`
 export const Test = styled.div`
   background-color: ${(props) => props.bgColor || `${Theme.green}`};
 `;
-export const StyledTest = () => {
-  return (
-    <>
-      <ButtonStyled></ButtonStyled>
-      <InputStyled>
-        <div>
-          아이디<span>*</span>
-        </div>
-        <div>
-          <LongInput></LongInput>
-        </div>
-      </InputStyled>
-      <InputStyled>
-        <div>
-          비밀번호<span>*</span>
-        </div>
-        <div></div>
-      </InputStyled>
-      <InputStyled>
-        <div>
-          이름<span>*</span>
-        </div>
-        <div></div>
-      </InputStyled>
 
-      <BigInputStyled>
-        <div>주소</div>
-        <div>
-          <ShortsInput type={"text"}></ShortsInput>
-          <LongInput></LongInput>
-          <LongInput></LongInput>
-        </div>
-      </BigInputStyled>
-    </>
-  );
-};
 export default InputStyled & BigInputStyled & LongInput & ShortsInput;
 // export default BigInputStyled;
 // export default ShortsInput;

@@ -1,0 +1,166 @@
+/**
+ * 최근 주문 정보 컴포넌트입니다.
+ * Data 배열로 받아 사용하게끔 map을 사용해 태그를 생성합니다.
+ * Data를 받아 사용하시면 됩니다.
+ * 현재 더미데이터로 내용을 출력하였습니다.
+ */
+
+
+import styled from 'styled-components';
+import SetMypageitem from './SetMypageitem';
+
+//섹션2 콘텐츠3 최근주문정보 컨테이너(사이즈조정)
+const OrderInfo = styled.div`
+  width: inherit;
+  //최근 주문정보 타이틀 컨테이너(사이즈,위치,폰트조정)
+  & > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px 20px;
+    border-bottom: 1px solid ${({ theme }) => theme.gray};
+    //최근 주문정보 타이틀(폰트,컬러조정)
+    & > h1 {
+      font-size: ${({ theme }) => theme.fontSize_18};
+      font-family: SCD-6;
+      color: ${({ theme }) => theme.lightblack};
+    }
+    //최근주문정보 타이틀 근황(폰트,컬러조정)
+    & > span {
+      font-size: ${({ theme }) => theme.fontSize_13};
+      color: ${({ theme }) => theme.gray};
+    }
+  }
+  //최근 주문정보 bar 컨테이너(사이즈조정)
+  & > div:nth-child(2) {
+    width: inherit;
+    //bar1 컨테이너(사이즈,위치,백그라운드조정)
+    & > div:nth-child(1) {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px;
+      background: ${({ theme }) => theme.white};
+      //bar1 텍스트 컨테이너(사이즈,위치조정)
+      & > div:nth-child(1) {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        //bar1 텍스트(폰트,컬러조정)
+        & > span {
+          font-family: SCD-6;
+          font-size: ${({ theme }) => theme.fontSize_15};
+          color: ${({ theme }) => theme.lightblack};
+        }
+      }
+      //bar2 컨테이너(사이즈,위치,백그라운드조정)
+      & > div:nth-child(2) {
+        width: 383px;
+        display: flex;
+        justify-content: space-between;
+        //bar2 텍스트(폰트,컬러조정)
+        & > span {
+          font-family: SCD-6;
+          font-size: ${({ theme }) => theme.fontSize_15};
+          color: ${({ theme }) => theme.lightblack};
+        }
+      }
+    }
+  }
+`;
+
+const SetMypageList = ({ Text }) => {
+  // console.log(data[1]);
+  // const buyproduct = data[1];
+  const dummyData = [
+    {
+      date: '2022-10-21',
+      odernum: '2210211234',
+      orderimg: 'http://localhost:8080/product/product-1.png',
+      orderitem: '반짝반짞이쁜사과',
+      ordercount: 1,
+      orderprice: 12000,
+      orderstatus: '배송완료',
+    },
+    {
+      date: '2022-10-21',
+      odernum: '2210211234',
+      orderimg: 'http://localhost:8080/product/product-1.png',
+      orderitem: '반짝반짝이쁜사과',
+      ordercount: 1,
+      orderprice: 12000,
+      orderstatus: '배송완료',
+    },
+    {
+      date: '2022-10-21',
+      odernum: '2210211234',
+      orderimg: 'http://localhost:8080/product/product-1.png',
+      orderitem: '반짝반짝이쁜사과',
+      ordercount: 1,
+      orderprice: 12000,
+      orderstatus: '배송완료',
+    },
+    {
+      date: '2022-10-21',
+      odernum: '2210211234',
+      orderimg: 'http://localhost:8080/product/product-1.png',
+      orderitem: '반짝반짝이쁜사과',
+      ordercount: 1,
+      orderprice: 12000,
+      orderstatus: '배송완료',
+    },
+    {
+      date: '2022-10-21',
+      odernum: '2210211234',
+      orderimg: 'http://localhost:8080/product/product-1.png',
+      orderitem: '반짝반짝이쁜사과',
+      ordercount: 1,
+      orderprice: 12000,
+      orderstatus: '배송완료',
+    },
+  ];
+  return (
+    <OrderInfo>
+      {/* 최근 주문정보 타이틀 */}
+      <div>
+        <h1>{Text}</h1>
+        <span>※ 최근 3개월 기준</span>
+      </div>
+      {/* 최근 주문정보 bar */}
+      <div>
+        <div>
+          {/* bar1 */}
+          <div>
+            <span>주문일자/주문번호</span>
+            <span>이미지</span>
+            <span>상품정보</span>
+          </div>
+          {/* bar2 */}
+          <div>
+            <span>수량</span>
+            <span>상품구매금액</span>
+            <span>주문처리상태</span>
+            <span>취소/교환/반품</span>
+          </div>
+        </div>
+        {/* 최근 주문정보 리스트 콘테이너 */}
+        <div>
+          {/* 더미 오브젝트 props로 Mypagese2OrderItem 컴포넌트로 보냄,맵 사용해서 태그 생성 */}
+          {dummyData.map((value, index) => {
+            return (
+              <SetMypageitem
+                key={index}
+                data={value}
+                totaldata={''}
+              ></SetMypageitem>
+            );
+          })}
+        </div>
+      </div>
+    </OrderInfo>
+  );
+};
+//end
+
+export default SetMypageList;

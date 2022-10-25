@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @기본버튼입니다
+ * @props
+ * @bgColor_color_fontSize_fontFamily
+ */
+
 export const BasicButton = styled.button`
   width: ${(props) => props.width || "200px"};
   height: ${(props) => props.height || "50px"};
@@ -13,6 +19,14 @@ export const BasicButton = styled.button`
     background-color: ${(props) => props.hoverBgColor || "none"};
   }
 `;
+
+/**
+ * @기본버튼입니다
+ * @props
+ * @bgColor_color_fontSize_fontFamily
+ */
+
+
 export const SmallButton = styled.button`
   width: 150px;
   height: 40px;

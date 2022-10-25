@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Theme from "../Theme/theme";
 
 // 상품 상세 페이지 상단 요소 박스
 export const ProductPageTopBox = styled.div`
@@ -75,19 +76,26 @@ export const ProductPageTopRight = styled.div`
   }
 `;
 
-// 수량 박스
-export const ProductPageCountBox = styled.div`
-  width: 625px;
+/**
+ *@수량_컴포넌트
+ *@props
+ *@boxWidth_boxHeight_boxBg_boxMargin
+ *@textMargin_textFontFamily_textFontSize
+ */
+
+// 수량 컴포넌트
+export const CountBox = styled.div`
+  width: ${(props) => props.boxWidth || "625px"};
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.white};
-  margin-top: 30px;
+  background-color: ${(props) => props.Bg || Theme.white};
+  margin: ${(props) => props.boxMargin || "30px 0 0 0px"};
 
   /* 수량 */
   & > div:nth-child(1) {
-    margin-left: 30px;
+    margin-left: ${(props) => props.textMargin || "30px 0 0 0px"};
     font-family: "SCD-6";
     font-size: 1.9rem;
   }

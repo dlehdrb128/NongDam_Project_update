@@ -1,18 +1,29 @@
 import { ProductItemBox, SaleBox } from "../../common/product";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { price } from "../../modules/product";
 
-const ProductItem = () => {
-  const data = {
-    product_key: 1,
-    product_image: "product-1.png",
-    product_local: "전남",
-    product_name: "상품 테스트",
-    product_discount_percent: 1,
-    product_price: 25000,
-    product_discount_percent: 5,
-  };
+const ProductItem = ({ data }) => {
+  const [datas, setDatas] = useState();
 
-  const datas = [{ reviewValue: 4.75689, reviewCount: 5 }];
+  useEffect(() => {
+    const getData = async (id) => {
+      try {
+        let response = await axios.get(
+          `http://localhost:8080/product/value/${id}`
+        );
+        setDatas(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData(data.product_key);
+  }, []);
+
+  if (datas === undefined) {
+    return null;
+  }
 
   return (
     <ProductItemBox>
@@ -25,21 +36,21 @@ const ProductItem = () => {
         <div>{data.product_name}</div>
         <div>
           {data.product_discount_percent === 0 ? (
-            <div>
-              {Math.round((data.product_price / 10) * 10).toLocaleString()}원
-            </div>
+            <div>{price(null, data.product_price)}원</div>
           ) : (
-            <SaleBox firstTextDecoration="line-through">
+            <SaleBox
+              firstTextDecoration="line-through"
+              firstPosition="absolute"
+              firstBottom="40px"
+            >
+              <div>{price(null, data.product_price)}</div>
               <div>
-                {Math.round((data.product_price / 10) * 10).toLocaleString()}
-              </div>
-              <div>
-                {Math.round(
-                  (data.product_price -
-                    (data.product_price * data.product_discount_percent) /
-                      100) /
-                    10
-                ) * (10).toLocaleString()}
+                {price(
+                  "sale",
+                  data.product_price,
+                  0,
+                  data.product_discount_percent
+                )}
                 원
               </div>
             </SaleBox>

@@ -12,7 +12,7 @@ import button, { BasicButton } from '../../common/button';
 
 const MainBox = styled.div`
   width: 843px;
-  padding: 180px 0 30px 0;
+  padding: 70px 0 30px 0;
   display: flex;
   flex-direction: column;
   & > form > h1 {

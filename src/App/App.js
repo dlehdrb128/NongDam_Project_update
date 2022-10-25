@@ -18,14 +18,13 @@ import ProductPage from "../Pages/ProductPage/ProductPage";
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
 // import AdminMain from "../Pages/Admin/AdminMain";
-import StoreOpenMain from "../Pages/StoreOpen/StoreOpenMain";
-import SignUp from "../Pages/SignUp/signUp";
+
 // import SignUpEnd from "../Pages/SignUp/signUpEnd";
 // import Recipe from "../Pages/Recipe/recipe";
 // import OrderDetail from "../Pages/Order/OrderDetail";
 // import CartMain from "../Pages/Cart/CartMain";
 // import FivedaysMakret from "../Pages/FivedaysMarket/FivedaysMarket";
-import NewProductMain from "../Pages/NewProduct/NewProductMain";
+
 // import Mypage from "../Pages/MyPage/MyPage";
 // import RecipeCreateReview from "../Pages/Recipe/recipeCreateReview";
 // import RecipeReview from "../Pages/Recipe/recipeReview";
@@ -71,8 +70,7 @@ function App() {
           <Route path="/signUpEnd" element={<SignUpEnd />}></Route>
 =======
           <Route path="/admin" element={<AdminMain />}></Route>*/}
-          <Route path="/admin/create" element={<StoreOpenMain />}></Route>
-          <Route path="/signUp" element={<SignUp></SignUp>}></Route>
+
           {/*<Route path="/signUpEnd" element={<SignUpEnd />}></Route>
         <Route path="/recipe" element={<Recipe />}></Route>
 >>>>>>> dc62fe13df3fb9a44f0cb58dd7140ea7354d7ada
@@ -87,7 +85,7 @@ function App() {
           ></Route>
           <Route path="/cart/user/:id" element={<CartMain />}></Route>
           <Route path="/FivedaysMakret" element={<FivedaysMakret />}></Route>*/}
-          <Route path="/admin/newproduct" element={<NewProductMain />}></Route>
+
           {/*  <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/upload" element={<UploadTest />}></Route>
           <Route path="/store/detail/:id" element={<Store />}></Route> */}

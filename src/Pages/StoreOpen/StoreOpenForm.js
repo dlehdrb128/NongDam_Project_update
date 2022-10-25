@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   InputBox,
   TitleBox,
@@ -7,7 +7,7 @@ import {
   SelectBox,
   ImgBox,
   RadioButton,
-} from '../../common/component';
+} from "../../common/component";
 
 const MainBox = styled.div`
   width: 843px;
@@ -15,7 +15,7 @@ const MainBox = styled.div`
   display: flex;
   flex-direction: column;
   & > form > h1 {
-    font-family: 'SCD-6';
+    font-family: "SCD-6";
     color: ${({ theme }) => theme.lightblack};
     font-size: 2.5rem;
     padding-top: 40px;
@@ -23,30 +23,31 @@ const MainBox = styled.div`
     border-bottom: 2px solid ${({ theme }) => theme.lightblack};
   }
 `;
+// 라라
 
 const StoreOpenForm = () => {
   const firstTelList = [
-    '02',
-    '031',
-    '032',
-    '033',
-    '041',
-    '042',
-    '043',
-    '044',
-    '051',
-    '052',
-    '054',
-    '055',
-    '061',
-    '062',
-    '063',
-    '064',
-    '070',
-    '010',
+    "02",
+    "031",
+    "032",
+    "033",
+    "041",
+    "042",
+    "043",
+    "044",
+    "051",
+    "052",
+    "054",
+    "055",
+    "061",
+    "062",
+    "063",
+    "064",
+    "070",
+    "010",
   ];
 
-  const firstMobileList = ['010', '011', '016', '017', '018', '019', '070'];
+  const firstMobileList = ["010", "011", "016", "017", "018", "019", "070"];
   return (
     <MainBox>
       <form>
@@ -56,7 +57,7 @@ const StoreOpenForm = () => {
             쇼핑몰명<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'text'}></InputBox>
+            <InputBox type={"text"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -64,7 +65,7 @@ const StoreOpenForm = () => {
             대표 휴대전화<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'text'}></InputBox>
+            <InputBox type={"text"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -72,7 +73,7 @@ const StoreOpenForm = () => {
             대표 이메일<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'email'}></InputBox>
+            <InputBox type={"email"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -80,24 +81,24 @@ const StoreOpenForm = () => {
             이름<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'text'}></InputBox>
+            <InputBox type={"text"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
-          <TitleBox height='205px'>
+          <TitleBox height="205px">
             사업장주소<span>*</span>
           </TitleBox>
-          <InputDivBox dir='Column' height='205px'>
-            <InputBox type={'text'} width='170px'></InputBox>
-            <InputBox type={'text'}></InputBox>
-            <InputBox type={'text'}></InputBox>
+          <InputDivBox dir="Column" height="205px">
+            <InputBox type={"text"} width="170px"></InputBox>
+            <InputBox type={"text"}></InputBox>
+            <InputBox type={"text"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
-          <TitleBox height='230px'>
+          <TitleBox height="230px">
             대표이미지 등록<span>*</span>
           </TitleBox>
-          <InputDivBox height='230px'>
+          <InputDivBox height="230px">
             <ImgBox>
               <div></div>
               <p>권장 500px * 500px</p>
@@ -105,14 +106,14 @@ const StoreOpenForm = () => {
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
-          <TitleBox height='200px'>스토어 설명</TitleBox>
-          <InputDivBox height='200px'>
-            <InputBox height='160px'></InputBox>
+          <TitleBox height="200px">스토어 설명</TitleBox>
+          <InputDivBox height="200px">
+            <InputBox height="160px"></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
           <TitleBox>대표전화</TitleBox>
-          <InputDivBox juc='flex-start' ali='center'>
+          <InputDivBox juc="flex-start" ali="center">
             <SelectBox>
               {firstTelList.map((item) => (
                 <option value={item} key={item}>
@@ -121,16 +122,16 @@ const StoreOpenForm = () => {
               ))}
             </SelectBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
           <TitleBox>
             휴대전화<span>*</span>
           </TitleBox>
-          <InputDivBox juc='flex-start' ali='center'>
+          <InputDivBox juc="flex-start" ali="center">
             <SelectBox>
               {firstMobileList.map((item) => (
                 <option value={item} key={item}>
@@ -139,9 +140,9 @@ const StoreOpenForm = () => {
               ))}
             </SelectBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -149,7 +150,7 @@ const StoreOpenForm = () => {
             수신전용 이메일<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'email'}></InputBox>
+            <InputBox type={"email"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -157,18 +158,18 @@ const StoreOpenForm = () => {
             발신전용 이메일<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'email'}></InputBox>
+            <InputBox type={"email"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
           <TitleBox>
             통신판매업 신고<span>*</span>
           </TitleBox>
-          <InputDivBox juc='flex-start' ali={'center'}>
-            <RadioButton type='radio' name='business'>
+          <InputDivBox juc="flex-start" ali={"center"}>
+            <RadioButton type="radio" name="business">
               신고함
             </RadioButton>
-            <RadioButton type='radio' name='business'>
+            <RadioButton type="radio" name="business">
               신고안함
             </RadioButton>
           </InputDivBox>
@@ -178,7 +179,7 @@ const StoreOpenForm = () => {
           <TitleBox>
             상담전화<span>*</span>
           </TitleBox>
-          <InputDivBox juc='flex-start' ali='center'>
+          <InputDivBox juc="flex-start" ali="center">
             <SelectBox>
               {firstTelList.map((item) => (
                 <option value={item} key={item}>
@@ -187,9 +188,9 @@ const StoreOpenForm = () => {
               ))}
             </SelectBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -197,12 +198,12 @@ const StoreOpenForm = () => {
             상담 이메일<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'email'}></InputBox>
+            <InputBox type={"email"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
           <TitleBox>팩스번호</TitleBox>
-          <InputDivBox juc='flex-start' ali='center'>
+          <InputDivBox juc="flex-start" ali="center">
             <SelectBox>
               {firstTelList.map((item) => (
                 <option value={item} key={item}>
@@ -211,9 +212,9 @@ const StoreOpenForm = () => {
               ))}
             </SelectBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
             <span>-</span>
-            <InputBox type={'text'} width='100px'></InputBox>
+            <InputBox type={"text"} width="100px"></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox>
@@ -221,7 +222,7 @@ const StoreOpenForm = () => {
             CS 운영시간<span>*</span>
           </TitleBox>
           <InputDivBox>
-            <InputBox type={'text'}></InputBox>
+            <InputBox type={"text"}></InputBox>
           </InputDivBox>
         </ColumnBox>
         <ColumnBox></ColumnBox>

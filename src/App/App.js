@@ -1,4 +1,3 @@
-
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from '../LayOut/MainLayout';
 import Header from '../LayOut/Header';
@@ -16,16 +15,16 @@ import ProductPage from '../Pages/ProductPage/ProductPage';
 import Intro from '../Pages/Intro/Intro';
 // import AdminMain from "../Pages/Admin/AdminMain";
 // import CartMain from "../Pages/Cart/CartMain";
-import FivedaysMakret from '../Pages/FivedaysMarket/FivedaysMarket';
-import NewProductMain from '../Pages/NewProduct/NewProductMain';
+import FivedaysMakret from "../Pages/FivedaysMarket/FivedaysMarket";
+import NewProductMain from "../Pages/NewProduct/NewProductMain";
 // import UploadTest from "../Pages/uploadTest/index";
 // import NewLogin from "../Pages/Login/newLogin";
 // import Mypage from "../Pages/MyPage/MyPage";
 // import OrderDetail from "../Pages/Order/OrderDetail";
 // import Store from "../Pages/Store/Store";
-import StoreOpenMain from '../Pages/StoreOpen/StoreOpenMain';
+import StoreOpenMain from "../Pages/StoreOpen/StoreOpenMain";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   return (

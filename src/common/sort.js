@@ -22,6 +22,7 @@ const SortBox = styled.div`
  * @function 상품을_속성별로_정렬해주는_함수
  * @arg prams_파라미터_props
  * @arg setParams_파라미터_설정_함수
+ * @arg
  */
 
 const Sort = ({ params, setParams }) => {

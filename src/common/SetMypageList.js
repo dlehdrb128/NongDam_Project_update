@@ -62,7 +62,7 @@ const OrderInfo = styled.div`
   }
 `;
 
-const SetMypageList = () => {
+const SetMypageList = ({ Text }) => {
   // console.log(data[1]);
   // const buyproduct = data[1];
   const dummyData = [
@@ -116,7 +116,7 @@ const SetMypageList = () => {
     <OrderInfo>
       {/* 최근 주문정보 타이틀 */}
       <div>
-        <h1>최근 주문 정보</h1>
+        <h1>{Text}</h1>
         <span>※ 최근 3개월 기준</span>
       </div>
       {/* 최근 주문정보 bar */}

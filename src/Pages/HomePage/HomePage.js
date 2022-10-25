@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import SetSidemenu from '../../common/SetSidemenu';
-import SetMypageTop from '../../common/SetMypageTop';
-import SetMypageList from '../../common/SetMypageList';
+import styled from "styled-components";
+import SetSidemenu from "../../common/SetSidemenu";
+import SetMypageTop from "../../common/SetMypageTop";
+import SetMypageList from "../../common/SetMypageList";
+import ProductItem from "../ProductPage/ProductItem";
 
 // 홈페이지
 const MainBox = styled.main`
@@ -22,8 +23,9 @@ const HomePage = () => {
       <MainBox>안녕!</MainBox>
       <div>
         <SetMypageTop />
-        <SetSidemenu Text={'그냥만듬'}></SetSidemenu>
+        <SetSidemenu Text={"그냥만듬"}></SetSidemenu>
         <SetMypageList></SetMypageList>
+        <ProductItem></ProductItem>
       </div>
     </>
   );

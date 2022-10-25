@@ -5,17 +5,20 @@
   font-size: 10px;
   user-select: none;
 }
+
 #root {
   width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 body {
   width: 1920px;
   min-width: 1920px;
   /* overflow-x: hidden; */
 }
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;

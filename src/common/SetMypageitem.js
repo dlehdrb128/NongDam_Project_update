@@ -6,6 +6,7 @@
 
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { BasicButton } from './button';
 
 const SetItems = styled.div`
   width: inherit;
@@ -55,9 +56,12 @@ const SetItems = styled.div`
 
 // let LinkUrl = `orderDetail/${data.user_key}`;
 
+
+
 const SetMypageitem = ({ data }) => {
   return (
     <Link to=''>
+      <BasicButton></BasicButton>
       <SetItems>
         <div>
           <p>{data.date}</p>

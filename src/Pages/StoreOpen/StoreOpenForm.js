@@ -8,6 +8,7 @@ import {
   ImgBox,
   RadioButton,
 } from '../../common/component';
+import { BasicButton } from '../../common/button';
 
 const MainBox = styled.div`
   width: 843px;
@@ -21,6 +22,15 @@ const MainBox = styled.div`
     padding-top: 40px;
     padding-bottom: 15px;
     border-bottom: 2px solid ${({ theme }) => theme.lightblack};
+  }
+  & > form > div:nth-child(20) {
+    width: 843px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > button {
+      margin: 70px 10px 0 10px;
+    }
   }
 `;
 
@@ -225,6 +235,10 @@ const StoreOpenForm = () => {
           </InputDivBox>
         </ColumnBox>
         <ColumnBox></ColumnBox>
+        <div>
+          <BasicButton>수정</BasicButton>
+          <BasicButton>등록</BasicButton>
+        </div>
       </form>
     </MainBox>
   );

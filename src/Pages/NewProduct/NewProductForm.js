@@ -8,7 +8,7 @@ import {
   ImgBox,
   RadioButton,
 } from '../../common/component';
-import button, { BasicButton } from '../../common/button';
+import { BasicButton } from '../../common/button';
 
 const MainBox = styled.div`
   width: 843px;

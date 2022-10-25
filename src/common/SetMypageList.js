@@ -1,3 +1,11 @@
+/**
+ * 최근 주문 정보 컴포넌트입니다.
+ * Data 배열로 받아 사용하게끔 map을 사용해 태그를 생성합니다.
+ * Data를 받아 사용하시면 됩니다.
+ * 현재 더미데이터로 내용을 출력하였습니다.
+ */
+
+
 import styled from 'styled-components';
 import SetMypageitem from './SetMypageitem';
 
@@ -62,7 +70,7 @@ const OrderInfo = styled.div`
   }
 `;
 
-const SetMypageList = () => {
+const SetMypageList = ({ Text }) => {
   // console.log(data[1]);
   // const buyproduct = data[1];
   const dummyData = [
@@ -116,7 +124,7 @@ const SetMypageList = () => {
     <OrderInfo>
       {/* 최근 주문정보 타이틀 */}
       <div>
-        <h1>최근 주문 정보</h1>
+        <h1>{Text}</h1>
         <span>※ 최근 3개월 기준</span>
       </div>
       {/* 최근 주문정보 bar */}

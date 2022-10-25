@@ -1,4 +1,10 @@
-//********부모 컨테이너의 너비값을 설정해줘야함
+/**
+ * 주문 처리현황 컴포넌트입니다.
+ * 반드시 부모 컴포넌트의 기준 너비를 잡고 사용해 주시길 바랍니다.
+ * Data를 받아 사용하시면 됩니다.
+ * 현재는 DummyData로 작업했습니다.
+ */
+
 
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';

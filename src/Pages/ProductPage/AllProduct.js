@@ -2,9 +2,8 @@ import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { getProductData } from "../../modules/product";
+import { getData } from "../../modules/yehoon";
 
 // 상품 검색페이지의 상단
 const ProductTop = styled.div`
@@ -136,7 +135,13 @@ const AllProduct = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getProductData(params, setLoading, setData, navigate);
+    getData(
+      `product/search/${params.params}/${params.sort}`,
+      `product/${params.params}`,
+      setLoading,
+      setData,
+      navigate
+    );
   }, [params]);
 
   const localSelectChange = (event) => {

@@ -1,13 +1,13 @@
-import { Route, Routes } from 'react-router-dom';
-import MainLayout from '../LayOut/MainLayout';
-import Header from '../LayOut/Header';
-import Footer from '../LayOut/Footer';
-import HomePage from '../Pages/HomePage/HomePage';
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "../LayOut/MainLayout";
+import Header from "../LayOut/Header";
+import Footer from "../LayOut/Footer";
+import HomePage from "../Pages/HomePage/HomePage";
 import Test2 from "../Pages/Recipe/recipe";
+import AllProduct from "../Pages/ProductPage/AllProduct";
+import ProductPage from "../Pages/ProductPage/ProductPage";
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
-// import AllProduct from "../Pages/ProductPage/AllProduct";
-// import ProductPage from "../Pages/ProductPage/ProductPage";
 // import AdminMain from "../Pages/Admin/AdminMain";
 // import StoreOpenMain from "../Pages/StoreOpen/StoreOpenMain";
 // import SignUp from "../Pages/SignUp/signUp";
@@ -23,7 +23,7 @@ import Test2 from "../Pages/Recipe/recipe";
 // import UploadTest from "../Pages/uploadTest/index";
 // import NewLogin from "../Pages/Login/newLogin";
 // import Store from "../Pages/Store/Store";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -31,14 +31,15 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
-          <Route path='/' element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="/Test" element={<Test2 />}></Route>
+          <Route path="/product/:category" element={<AllProduct />}></Route>
+          <Route path="/product/detail/:id" element={<ProductPage />}></Route>
           {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>
           <Route path="/intro" element={<Intro />}></Route>
-          <Route path="/product/:category" element={<AllProduct />}></Route>
-          <Route path="/product/detail/:id" element={<ProductPage />}></Route>
+          
           <Route path="/admin" element={<AdminMain />}></Route>
           <Route path="/admin/create" element={<StoreOpenMain />}></Route>
           <Route path="/signUp" element={<SignUp></SignUp>}></Route>

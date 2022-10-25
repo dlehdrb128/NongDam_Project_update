@@ -106,14 +106,14 @@ export const ProductItemBox = styled.div`
   }
 
   & > a:nth-child(1) {
-    width: ${(props) => props.boxWidth || "250px"};
+    width: ${(props) => props.boxWidth || "350px"};
     display: flex;
     flex-direction: column;
 
     /* 이미지 규격 설정 */
     & > img {
-      width: ${(props) => props.imgWidth || "250px"};
-      height: ${(props) => props.imgHeight || "250px"};
+      width: ${(props) => props.imgWidth || "350px"};
+      height: ${(props) => props.imgHeight || "350px"};
       border-radius: ${(props) => props.imgRadius || "10px"};
     }
 

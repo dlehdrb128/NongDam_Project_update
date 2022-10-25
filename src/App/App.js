@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from '../LayOut/MainLayout';
 import Header from '../LayOut/Header';
 import Footer from '../LayOut/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
+=======
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "../LayOut/MainLayout";
+import Header from "../LayOut/Header";
+import Footer from "../LayOut/Footer";
+import HomePage from "../Pages/HomePage/HomePage";
+import Test2 from "../Pages/Recipe/recipe";
+
+>>>>>>> f0e6e1e0e6d8f9d0f4a65bb131e75a75b1ba5c55
 // import Login from "../Pages/Login/login";
 // import Intro from "../Pages/Intro/Intro";
 // import AllProduct from "../Pages/ProductPage/AllProduct";
@@ -22,7 +32,11 @@ import HomePage from '../Pages/HomePage/HomePage';
 // import UploadTest from "../Pages/uploadTest/index";
 // import NewLogin from "../Pages/Login/newLogin";
 // import Store from "../Pages/Store/Store";
+<<<<<<< HEAD
 import './App.css';
+=======
+import "./App.css";
+>>>>>>> f0e6e1e0e6d8f9d0f4a65bb131e75a75b1ba5c55
 
 function App() {
   return (
@@ -30,7 +44,12 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
+<<<<<<< HEAD
           <Route path='/' element={<HomePage />}></Route>
+=======
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/Test" element={<Test2 />}></Route>
+>>>>>>> f0e6e1e0e6d8f9d0f4a65bb131e75a75b1ba5c55
           {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>

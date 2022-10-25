@@ -1,3 +1,4 @@
+
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from '../LayOut/MainLayout';
 import Header from '../LayOut/Header';
@@ -32,47 +33,30 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
+          <Route path="/" element={<HomePage />}></Route>
+          {/* <Route path="/admin" element={<AdminMain />}></Route> */}
+          <Route path='/admin/create' element={<StoreOpenMain />}></Route>
+         <Route path="/admin/newproduct" element={<NewProductMain />}></Route>
+          {/* <Route path="/cart/user/:id" element={<CartMain />}></Route> */}
+          <Route path="/FivedaysMakret" element={<FivedaysMakret />}></Route>
+          {/* <Route path="/login" element={<Login />}></Route> */}
+          {/* <Route path="/newLogin" element={<NewLogin />}></Route> */}
+          {/* <Route path="/mypage" element={<Mypage />}></Route> */}
+          {/* <Route path="/orderDetail/:productId" element={<OrderDetail />}></Route> */}
+          <Route path="/product/:category" element={<AllProduct />}></Route>
+          <Route path="/product/detail/:id" element={<ProductPage />}></Route>
+          {/* <Route path='/recipe' element={<Recipe />}></Route> */}
+          {/* <Route path='/recipeCreateReview' element={<RecipeCreateReview />}></Route> */}
+          {/* <Route path='/recipe/post/:id' element={<RecipeReview />}></Route> */}
+          {/* <Route path="/store/detail/:id" element={<Store />}></Route> */}
+          {/* <Route path='/signUp' element={<SignUp />}></Route> */}
+          {/* <Route path='/signUpEnd' element={<SignUpEnd />}></Route> */}
+          {/* <Route path='/Test' element={<Test2 />}></Route> */}
+          {/* <Route path="/upload" element={<UploadTest />}></Route> */}
           <Route path='/Test' element={<Test2 />}></Route>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='/product/:category' element={<AllProduct />}></Route>
-          <Route path='/product/detail/:id' element={<ProductPage />}></Route>
           {/* <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route> */}
           <Route path='/intro' element={<Intro />}></Route>
-          {/* <Route path="/product/:category" element={<AllProduct />}></Route>
-          <Route path='/recipe' element={<Recipe />}></Route>
-          <Route
-            path='/recipeCreateReview'
-            element={<RecipeCreateReview />}
-          ></Route>
-          <Route path='/recipe/post/:id' element={<RecipeReview />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/signUp' element={<SignUp />}></Route>
-          <Route path='/signUpEnd' element={<SignUpEnd />}></Route>
-          <Route path='/Test' element={<Test2 />}></Route>
-          <Route path='/product/:category' element={<AllProduct />}></Route>
-          <Route path='/product/detail/:id' element={<ProductPage />}></Route>
-          {/* <Route path="/" element={<HomePage />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/newLogin" element={<NewLogin />}></Route>
-          <Route path="/intro" element={<Intro />}></Route>
-          
-          <Route path="/admin" element={<AdminMain />}></Route>*/}
-          <Route path='/admin/create' element={<StoreOpenMain />}></Route>
-          {/*<Route path="/recipe" element={<Recipe />}></Route>
-          <Route path="/recipeCreateReview"element={<RecipeCreateReview />}></Route>
-          <Route path="/recipe/post/:id" element={<RecipeReview />}></Route>
-          <Routepath="/orderDetail/:productId"element={<OrderDetail />}></Routepath
-          <Route path="/cart/user/:id" element={<CartMain />}></Route> */}
-          <Route path='/FivedaysMakret' element={<FivedaysMakret />}></Route>
-          {/* <Route path="/admin/newproduct" element={<NewProductMain />}></Route>
-          <Route path="/mypage" element={<Mypage />}></Route>
-          <Route path="/cart/user/:id" element={<CartMain />}></Route>
-          <Route path="/FivedaysMakret" element={<FivedaysMakret />}></Route>*/}
-          <Route path='/admin/newproduct' element={<NewProductMain />}></Route>
-          {/*  <Route path="/mypage" element={<Mypage />}></Route>
-          <Route path="/upload" element={<UploadTest />}></Route>
-          <Route path="/store/detail/:id" element={<Store />}></Route> */}
           <Route element={<Footer />} />
         </Route>
       </Routes>

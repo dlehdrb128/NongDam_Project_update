@@ -21,7 +21,6 @@ const MainBox = styled.main`
 const HomePage = () => {
   return (
     <>
-      <MainBox>안녕!</MainBox>
       <div>
         <SetMypageTop />
         <SetSidemenu Text={'그냥만듬'}></SetSidemenu>

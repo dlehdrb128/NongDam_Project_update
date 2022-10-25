@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/**
+ * @기본버튼입니다
+ * @props
+ * @bgColor_color_fontSize_fontFamily
+ */
+
 export const BasicButton = styled.button`
   width: 200px;
   height: 50px;
@@ -10,6 +16,14 @@ export const BasicButton = styled.button`
   font-family: ${(props) => props.fontFamily || "SCD-5"};
   cursor: pointer;
 `;
+
+/**
+ * @기본버튼입니다
+ * @props
+ * @bgColor_color_fontSize_fontFamily
+ */
+
+
 export const SmallButton = styled.button`
   width: 150px;
   height: 40px;

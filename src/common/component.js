@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Theme from "../Theme/theme";
-export const ButtonStyled = styled.button`
+const ButtonStyled = styled.button`
   /* 버튼 */
   width: ${(props) => props.width || "150px"};
   height: ${(props) => props.height || "40px"};
@@ -50,12 +50,15 @@ export const InputStyled = styled.div`
   & > div:nth-child(2) {
     width: ${(props) => props.width || "1030px"};
     height: ${(props) => props.height || "80px"};
+    color: ${(props) => props.color || `${props.theme.lightblack}`};
+    font-size: ${(props) => props.fontSize || "1.5rem"};
     padding-left: 15px;
     background-color: white;
     border-bottom: ${(props) =>
       props.borderBottom || `1px solid ${props.theme.lightblack}`};
     display: flex;
     align-items: center;
+    justify-content: flex-start;
   }
 `;
 export const BigInputStyled = styled.div`
@@ -162,3 +165,7 @@ export const StyledTest = () => {
     </>
   );
 };
+export default InputStyled & BigInputStyled & LongInput & ShortsInput;
+// export default BigInputStyled;
+// export default ShortsInput;
+// export default LongInput;

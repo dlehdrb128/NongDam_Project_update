@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FivedaysMakretTopvisual from "./FiveDaysMarketTopvisual";  
+import FivedaysMakretTopvisual from "./FiveDaysMarketTopvisual";
 import FivedaysMakretsec1 from "./section/FivedaysMarketsec1";
 import FivedaysMarketsec2 from "./section/FivedaysMarketsec2";
 import Remocon from "../../LayOut/Remocon";
@@ -51,10 +51,10 @@ const FivedaysMakret = () => {
       <Main>
         <FivedaysMakretTopvisual />
         <Remocon />
-        {/* <FivedaysMakretsec1 data={data} /> */}
+        <FivedaysMakretsec1 data={data} />
         {/* section1 */}
         <div className="sec_wrap">
-          {/* <FivedaysMarketsec2 data={data} /> */}
+          <FivedaysMarketsec2 data={data} />
           {/*section2 */}
         </div>
       </Main>

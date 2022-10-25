@@ -13,6 +13,7 @@ const FivedaysmakretTopvisual = styled.div`
   background-size: cover;
   position: relative;
   z-index: 3;
+  margin-bottom: 200px;
   //탑 비주얼 타이틀(컬러/폰트/위치조정)
   & > h1 {
     font-size: ${({ theme }) => theme.fontSize_60};

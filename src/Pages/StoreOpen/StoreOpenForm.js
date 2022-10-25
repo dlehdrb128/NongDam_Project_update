@@ -9,7 +9,6 @@ import {
   RadioButton,
 } from '../../common/component';
 import { BasicButton } from '../../common/button';
-
 const MainBox = styled.div`
   width: 843px;
   padding: 70px 0 30px 0;

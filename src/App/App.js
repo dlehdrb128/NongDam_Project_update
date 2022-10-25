@@ -34,20 +34,15 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<Header />} />
-
           <Route path='/' element={<HomePage />}></Route>
-
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/Test" element={<Test2 />}></Route>
           <Route path="/product/:category" element={<AllProduct />}></Route>
           <Route path="/product/detail/:id" element={<ProductPage />}></Route>
-
           {/* <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/newLogin" element={<NewLogin />}></Route>
           <Route path="/intro" element={<Intro />}></Route>
-          <Route path="/product/:category" element={<AllProduct />}></Route>
-          <Route path="/product/detail/:id" element={<ProductPage />}></Route>
           <Route path="/admin" element={<AdminMain />}></Route>*/}
           <Route path='/admin/create' element={<StoreOpenMain />}></Route>
           <Route path='/signUp' element={<SignUp></SignUp>}></Route>

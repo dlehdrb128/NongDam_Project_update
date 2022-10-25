@@ -6,7 +6,6 @@ import {
   ColumnBox,
   SelectBox,
   ImgBox,
-  CheckboxDiv,
   RadioButton,
 } from '../../common/component';
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 // 푸터 박스
-const FooterBox = styled.div`
+const FooterBox = styled.footer`
   width: 1920px;
   display: flex;
   flex-direction: column;

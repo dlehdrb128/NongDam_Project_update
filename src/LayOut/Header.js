@@ -4,7 +4,7 @@ import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 // 헤더 박스
-const HeaderBox = styled.div`
+const HeaderBox = styled.header`
   width: 1920px;
   height: 103px;
   display: flex;
@@ -162,7 +162,7 @@ const Header = () => {
           navigate("/");
           window.location.reload();
         }
-      } catch (error) {}
+      } catch (error) { }
     }
   };
 

@@ -99,7 +99,7 @@ const SetSidemenu = ({ Text }) => {
             {/*메뉴 텍스트 컨테이너*/}
             <div>
               {/* 메뉴텍스트 */}
-              <Link>스토어 개설</Link>
+              <Link to='/admin/create'>스토어 개설</Link>
             </div>
           </div>
           <div>
@@ -118,7 +118,7 @@ const SetSidemenu = ({ Text }) => {
             {/*메뉴 텍스트 컨테이너*/}
             <div>
               {/* 메뉴텍스트 */}
-              <Link>상품 등록</Link>
+              <Link to='/admin/newproduct'>상품 등록</Link>
               <Link>상품 목록</Link>
               <Link>상품 진열</Link>
             </div>

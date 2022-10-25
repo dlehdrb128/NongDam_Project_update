@@ -33,7 +33,7 @@ const OrderDetail = () => {
       }
     };
 
-    // request();
+    request();
   }, []);
 
   return (

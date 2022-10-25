@@ -1,3 +1,11 @@
+/**
+ * 최근 주문 정보 컴포넌트입니다.
+ * Data 배열로 받아 사용하게끔 map을 사용해 태그를 생성합니다.
+ * Data를 받아 사용하시면 됩니다.
+ * 현재 더미데이터로 내용을 출력하였습니다.
+ */
+
+
 import styled from 'styled-components';
 import SetMypageitem from './SetMypageitem';
 

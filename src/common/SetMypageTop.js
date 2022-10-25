@@ -1,8 +1,7 @@
 //********부모 컨테이너의 너비값을 설정해줘야함
 
-import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import styled from "styled-components";
+import { useState, useEffect } from "react";
 
 //섹션2 콘텐츠1 주문처리현황 컨테이너(사이즈,백그라운드,위치조정)
 const Info = styled.div`
@@ -61,8 +60,8 @@ const Info = styled.div`
       & > p:nth-child(1) {
         &::after {
           //화살표아이콘(백그라운드,사이즈,위치조정)
-          content: '';
-          background: url('/img/Direction.png') no-repeat center;
+          content: "";
+          background: url("/img/Direction.png") no-repeat center;
           background-size: cover;
           width: 7px;
           height: 13px;
@@ -73,7 +72,7 @@ const Info = styled.div`
       }
       //쿠폰,적립금,선호상품 분류선(사이즈,위치조정)
       &::after {
-        content: '';
+        content: "";
         background: ${({ theme }) => theme.lightgreen};
         width: 1px;
         height: 50px;
@@ -85,8 +84,8 @@ const Info = styled.div`
     //각각 아이콘 배치(사이즈,위치,백그라운드조정)
     & > div:nth-child(1) {
       &::before {
-        content: '';
-        background: url('http://localhost:8080/svg/coupon.svg') no-repeat center;
+        content: "";
+        background: url("http://localhost:8080/svg/coupon.svg") no-repeat center;
         width: 48px;
         height: 47px;
         position: absolute;
@@ -94,8 +93,8 @@ const Info = styled.div`
     }
     & > div:nth-child(2) {
       &::before {
-        content: '';
-        background: url('http://localhost:8080/svg/StackMoney.svg') no-repeat
+        content: "";
+        background: url("http://localhost:8080/svg/StackMoney.svg") no-repeat
           center;
         background-size: cover;
         width: 43px;
@@ -105,8 +104,8 @@ const Info = styled.div`
     }
     & > div:nth-child(3) {
       &::before {
-        content: '';
-        background: url('http://localhost:8080/svg/Favorite.svg') no-repeat
+        content: "";
+        background: url("http://localhost:8080/svg/Favorite.svg") no-repeat
           center;
         width: 41px;
         height: 47px;
@@ -158,10 +157,10 @@ const SetMypageTop = () => {
   // let otherdata = data[1];
 
   const exinfo = {
-    name: '이상호',
-    coupon: '1',
-    point: '8000',
-    cart: '1',
+    name: "이상호",
+    coupon: "1",
+    point: "8000",
+    cart: "1",
   };
   return (
     <Info>

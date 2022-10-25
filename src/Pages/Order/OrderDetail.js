@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import OrderInfo from "../Order/OrderInfo";
-import OrderTitle from "./OrderTitle";
 import OrderPayment from "./OrderPaymentInfo";
 import OrderPerson from "./OrderPerson";
-import Mypagesec1 from "../MyPage/section/Mypagesec1";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { RsWrapper, Wrapper } from "./component";
+import SetMypageList from "../../common/SetMypageList";
+import SetSidemenu from "../../common/SetSidemenu";
+import SetMypageTop from "../../common/SetMypageTop";
 
 const OrderDetail = () => {
   const navigate = useNavigate();
@@ -43,23 +43,15 @@ const OrderDetail = () => {
           {/* 메뉴 */}
           {/* <Mypagesec1 Text={`주문상세`} /> */}
 
+          <SetSidemenu Text={`주문상세`} />
+
           <Wrapper dir={`column`} ju={`flex-start`}>
             <Wrapper dir={`column`}>
               {/* 나의 주문 정보 */}
-              <OrderTitle orderDetail={orderDetail} />
-
-              <Wrapper
-                ju={`flex-start`}
-                fontSize={`1.8rem`}
-                padding={`10px`}
-                fontFamily={`SCD-6`}
-              >
-                주문 정보
-              </Wrapper>
+              <SetMypageTop />
+              <SetMypageList Text={`주문 정보`} />
             </Wrapper>
 
-            {/* 주문 상품 정보 */}
-            <OrderInfo orderDetail={orderDetail} />
             {/* 받는 사람 정보 */}
             <OrderPerson orderDetail={orderDetail} />
             {/*  결제정보 */}

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Sidemenu = styled.div`
   margin-right: 30px;
@@ -95,7 +95,7 @@ const SetSidemenu = ({ Text }) => {
             {/* 메뉴텍스트 */}
             <Link>주문내역</Link>
             <Link>취소/교환/반품내역</Link>
-            <Link to={''}>장바구니</Link>
+            <Link to={""}>장바구니</Link>
             <Link>관심상품</Link>
           </div>
         </div>

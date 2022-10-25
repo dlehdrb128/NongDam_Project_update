@@ -9,6 +9,7 @@ import {
   RadioButton,
 } from '../../common/component';
 import { BasicButton } from '../../common/button';
+
 const MainBox = styled.div`
   width: 843px;
   padding: 70px 0 30px 0;
@@ -235,8 +236,19 @@ const StoreOpenForm = () => {
         </ColumnBox>
         <ColumnBox></ColumnBox>
         <div>
-          <BasicButton>수정</BasicButton>
-          <BasicButton>등록</BasicButton>
+          <BasicButton
+            bgColor={({ theme }) => theme.realWhite}
+            color={({ theme }) => theme.lightblack}
+            border='1px solid'
+            fontFamily='SCD-6'
+            fontSize='1.8rem'
+            borderRadius='3px'
+          >
+            수정
+          </BasicButton>
+          <BasicButton fontFamily='SCD-6' fontSize='1.8rem' borderRadius='3px'>
+            등록
+          </BasicButton>
         </div>
       </form>
     </MainBox>

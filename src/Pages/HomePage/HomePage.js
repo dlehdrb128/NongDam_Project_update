@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import SetSidemenu from "../../common/SetSidemenu";
-import SetMypageTop from "../../common/SetMypageTop";
-import SetMypageList from "../../common/SetMypageList";
-import SellerInfo from "../../common/SellerInfo";
+import MainLatestProduct from "./MainLatestProduct/MainLatestProduct";
+import MainLogo from "./MainLogo/MainLogo";
+import MainArticle from "./MainArticle/MainArticle";
+import MainEventMarket from "./MainEventMarket/MainEventMarket";
+import MainReview from "./MainReview/MainReview";
+import Remocon from "../../LayOut/Remocon";
 
 // 홈페이지
 const MainBox = styled.main`
@@ -10,24 +12,19 @@ const MainBox = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  div {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-  }
 `;
 
 const HomePage = () => {
   return (
     <>
-      <div>
-        <SetMypageTop />
-        <SetSidemenu Text={"그냥만듬"}></SetSidemenu>
-        <SetMypageList></SetMypageList>
-        <SetSidemenu Text={"상호"}></SetSidemenu>
-        <SetMypageList Text={"최근주문정보"}></SetMypageList>
-        <SellerInfo></SellerInfo>
-      </div>
+      <MainBox>
+        <MainLogo></MainLogo>
+        <MainArticle></MainArticle>
+        <MainLatestProduct></MainLatestProduct>
+        <MainEventMarket></MainEventMarket>
+        <MainReview></MainReview>
+        <Remocon></Remocon>
+      </MainBox>
     </>
   );
 };

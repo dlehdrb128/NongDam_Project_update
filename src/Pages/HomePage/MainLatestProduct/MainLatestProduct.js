@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import LatestProductItem from "./LatestProductItem";
 import axios from "axios";
+import { getData } from "../../../modules/yehoon";
 
 // 방금 들어온 못난이들의 최상위 부모 컨테이너
 const MainLatestProductBox = styled.div`
@@ -76,15 +77,7 @@ const MainLatestProduct = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        let response = await axios.get(`http://localhost:8080/latest`);
-        setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
+    getData("latest", null, null, setData, null, null);
   }, []);
 
   if (data === undefined) {

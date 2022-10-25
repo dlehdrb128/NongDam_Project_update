@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getData } from "../../../modules/yehoon";
 import ReviewItem from "./ReviewItem";
 
 // 메인 홈페이지 하단 리뷰의 최상위 부모 컨테이너
@@ -50,15 +51,7 @@ const MainReview = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        let response = await axios.get(`http://localhost:8080/review`);
-        setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
+    getData("review", null, null, setData, null, null);
   }, []);
 
   if (data === undefined) {

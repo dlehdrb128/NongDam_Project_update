@@ -162,7 +162,7 @@ const Header = () => {
           navigate("/");
           window.location.reload();
         }
-      } catch (error) { }
+      } catch (error) {}
     }
   };
 

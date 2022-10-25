@@ -2,7 +2,7 @@ import { ProductItemBox, SaleBox } from "../../common/product";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { price } from "../../modules/product";
+import { price } from "../../modules/yehoon";
 
 const ProductItem = ({ data }) => {
   const [datas, setDatas] = useState();

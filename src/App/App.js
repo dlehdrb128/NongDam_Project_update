@@ -14,7 +14,7 @@ import Test2 from "../Pages/Recipe/recipe";
 // import SignUp from "../Pages/SignUp/signUp";
 // import SignUpEnd from "../Pages/SignUp/signUpEnd";
 // import Recipe from "../Pages/Recipe/recipe";
-// import OrderDetail from "../Pages/Order/OrderDetail";
+import OrderDetail from "../Pages/Order/OrderDetail";
 // import CartMain from "../Pages/Cart/CartMain";
 // import FivedaysMakret from "../Pages/FivedaysMarket/FivedaysMarket";
 // import NewProductMain from "../Pages/NewProduct/NewProductMain";
@@ -50,16 +50,18 @@ function App() {
             element={<RecipeCreateReview />}
           ></Route>
           <Route path="/recipe/post/:id" element={<RecipeReview />}></Route>
-          <Route
-            path="/orderDetail/:productId"
-            element={<OrderDetail />}
-          ></Route>
+        
           <Route path="/cart/user/:id" element={<CartMain />}></Route>
           <Route path="/FivedaysMakret" element={<FivedaysMakret />}></Route>
           <Route path="/admin/newproduct" element={<NewProductMain />}></Route>
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/upload" element={<UploadTest />}></Route>
           <Route path="/store/detail/:id" element={<Store />}></Route> */}
+          <Route
+            path="/orderDetail/:productId"
+            element={<OrderDetail />}
+          ></Route>
+
           <Route element={<Footer />} />
         </Route>
       </Routes>

@@ -4,7 +4,7 @@ const connection = require("../../../db/db");
 const userCheck = require("../../../util/usercheck");
 
 router.get("/:id", (req, res) => {
-  let id = req.params.id
+  let id = req.params.id;
   connection.query(
     `select user_name from user where user_key =${id};
     select * from orders left outer join product on product.product_key = orders.product_key where orders.user_key = ${id};
@@ -18,9 +18,11 @@ router.get("/:id", (req, res) => {
   console.log("db 연동완료");
 });
 
-router.get("/:productId", userCheck, (req, res) => {
+router.get("/detail/:productId", userCheck, (req, res) => {
   const { productId } = req.params;
   const { user_key } = req.session.userInfo;
+
+  console.log(productId);
   // console.log(req.session.userInfo);
 
   const SQL1 = `

@@ -1,3 +1,9 @@
+/**
+ * 주문 정보 아이템 컴포넌트입니다. 부모 컴포넌트에서 import 하여 map메서드롤 이용하여 사용하시면 됩니다.
+ *  Data를 받아 사용하시면 됩니다.
+ *  현재는 부모 컴포넌트로 부터 받은 데이터를 받아 작업되어있습니다.
+ */
+
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 

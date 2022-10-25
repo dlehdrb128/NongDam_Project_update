@@ -13,6 +13,7 @@ const recipe = require("./Server/Router/Recipe/index");
 const login = require("./Server/Router/Login/index");
 const signUp = require("./Server/Router/SignUp/index");
 const order = require("./Server/Router/Orders/index");
+const Market = require("./Server/Router/Market/index");
 
 const PORT = process.env.PORT || 8080;
 
@@ -55,7 +56,7 @@ app.use("/login", login);
 app.use("/signUp", signUp);
 app.use("/order", order);
 app.use("/login", login);
-
+app.use("/market", Market);
 try {
   fs.readdirSync("uploads");
 } catch (error) {

@@ -3,6 +3,7 @@
  * Data 배열로 받아 사용하게끔 map을 사용해 태그를 생성합니다.
  * Data를 받아 사용하시면 됩니다.
  * 현재 더미데이터로 내용을 출력하였습니다.
+ * recent 값이 부모에서 true를 줄 경우 최근3개월 기준이 뜨고 false면 안뜸
  */
 
 
@@ -70,7 +71,7 @@ const OrderInfo = styled.div`
   }
 `;
 
-const SetMypageList = ({ Text }) => {
+const SetMypageList = ({ Text, recent }) => {
   // console.log(data[1]);
   // const buyproduct = data[1];
   const dummyData = [
@@ -125,7 +126,7 @@ const SetMypageList = ({ Text }) => {
       {/* 최근 주문정보 타이틀 */}
       <div>
         <h1>{Text}</h1>
-        <span>※ 최근 3개월 기준</span>
+        <span>{recent === true ? '※최근 3개월 기준' : null}</span>
       </div>
       {/* 최근 주문정보 bar */}
       <div>

@@ -7,15 +7,15 @@ import {
   ProductPageTopBox,
   ProductPageTopLeft,
   ProductPageTopRight,
-  ProductPageCountBox,
+  CountBox,
   ProductPageTotalPrice,
   ProductPageButtonBox,
 } from "../../common/productPage.js";
+import { price } from "../../modules/yehoon";
 
 const ProductPageTop = ({ ProductData }) => {
   const [count, setCount] = useState(0);
   const data = [ProductData[0], count];
-  let salePrice = null;
 
   const up = () => {
     if (count > 0) {
@@ -28,13 +28,6 @@ const ProductPageTop = ({ ProductData }) => {
   };
 
   ProductData = ProductData[0];
-
-  if (ProductData.product_discount_set === 1) {
-    salePrice =
-      ProductData.product_price -
-      (ProductData.product_price * ProductData.product_discount_percent) /
-        (100).toLocaleString();
-  }
 
   const sendCart = () => {
     axios.post("http://localhost:8080/product/cart/insert", data);
@@ -55,50 +48,49 @@ const ProductPageTop = ({ ProductData }) => {
         <div>[{ProductData.product_local}]</div>
         <div>{ProductData.product_name}</div>
         <hr></hr>
-        {salePrice === null ? (
-          <div>
-            {(Math.round(ProductData.product_price / 10) * 10).toLocaleString()}
-            원
-          </div>
+        {ProductData.product_discount_set === 0 ? (
+          <div>{price(null, ProductData.product_price)}원</div>
         ) : (
           <SaleBox
             firstTextDecoration="line-through"
             firstPosition="absolute"
             firstBottom="40px"
           >
+            <div>{price(null, ProductData.product_price)}원</div>
             <div>
-              {(
-                Math.round(ProductData.product_price / 10) * 10
-              ).toLocaleString()}
+              {price(
+                "sale",
+                ProductData.product_price,
+                1,
+                ProductData.product_discount_percent
+              )}
               원
             </div>
-            <div>{Math.round(salePrice / 10) * 10}원</div>
           </SaleBox>
         )}
-        <ProductPageCountBox>
+        <CountBox>
           <div>수량</div>
           <div>
             <button onClick={up}>-</button>
             <div>{count}</div>
             <button onClick={down}>+</button>
           </div>
-        </ProductPageCountBox>
+        </CountBox>
         <ProductPageTotalPrice>
           <div>총 합계금액 (수량) :</div>
 
           <div>
-            {salePrice === null ? (
-              <div>
-                {(
-                  Math.round(ProductData.product_price / 10) *
-                  10 *
-                  count
-                ).toLocaleString()}
-                원
-              </div>
+            {ProductData.product_discount_set === 0 ? (
+              <div>{price("total", ProductData.product_price, count)}원</div>
             ) : (
               <div>
-                {(Math.round(salePrice / 10) * 10 * count).toLocaleString()}원
+                {price(
+                  "sale",
+                  ProductData.product_price,
+                  count,
+                  ProductData.product_discount_percent
+                )}
+                원
               </div>
             )}
             <div>({count}개)</div>

@@ -1,24 +1,20 @@
 import { ProductItemBox, SaleBox } from "../../common/product";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { price } from "../../modules/yehoon";
+import { getData, price } from "../../modules/yehoon";
 
 const ProductItem = ({ data }) => {
   const [datas, setDatas] = useState();
 
   useEffect(() => {
-    const getData = async (id) => {
-      try {
-        let response = await axios.get(
-          `http://localhost:8080/product/value/${id}`
-        );
-        setDatas(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData(data.product_key);
+    getData(
+      `product/value/${data.product_key}`,
+      null,
+      null,
+      setDatas,
+      null,
+      null
+    );
   }, []);
 
   if (datas === undefined) {
@@ -48,7 +44,7 @@ const ProductItem = ({ data }) => {
                 {price(
                   "sale",
                   data.product_price,
-                  0,
+                  1,
                   data.product_discount_percent
                 )}
                 원

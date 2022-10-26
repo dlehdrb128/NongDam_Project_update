@@ -3,11 +3,11 @@
  * 부모에서 Text = {스토어 관리 or 상품관리} 를 치면 스토어 전용 메뉴로 바뀝니다.
  */
 
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Sidemenu = styled.div`
   margin-right: 30px;
@@ -90,16 +90,16 @@ const SetSidemenu = ({ Text }) => {
     <Sidemenu>
       {/* 섹션1 타이틀 */}
       <h1>{Text}</h1>
-      {Text === '상품관리' || Text === '스토어 관리' ? (
+      {Text === "상품 관리" || Text === "스토어 정보" ? (
         <div>
           {/* 메뉴 콘텐츠 */}
           <div>
             {/* 메뉴 콘텐츠 타이틀 */}
-            <h2>스토어정보</h2>
+            <h2>스토어 정보</h2>
             {/*메뉴 텍스트 컨테이너*/}
             <div>
               {/* 메뉴텍스트 */}
-              <Link to='/admin/create'>스토어 개설</Link>
+              <Link to="/admin/create">스토어 개설</Link>
             </div>
           </div>
           <div>
@@ -109,16 +109,16 @@ const SetSidemenu = ({ Text }) => {
             <div>
               {/* 메뉴텍스트 */}
               <Link>스토어 프로필 설정</Link>
-              <Link>메인 배너 설정</Link>
+              <Link>메인배너 설정</Link>
             </div>
           </div>
           <div>
             {/* 메뉴 콘텐츠 타이틀 */}
-            <h2>상품관리</h2>
+            <h2>상품 관리</h2>
             {/*메뉴 텍스트 컨테이너*/}
             <div>
               {/* 메뉴텍스트 */}
-              <Link to='/admin/newproduct'>상품 등록</Link>
+              <Link to="/admin/newproduct">상품 등록</Link>
               <Link>상품 목록</Link>
               <Link>상품 진열</Link>
             </div>
@@ -156,7 +156,7 @@ const SetSidemenu = ({ Text }) => {
               {/* 메뉴텍스트 */}
               <Link>주문내역</Link>
               <Link>취소/교환/반품내역</Link>
-              <Link to={''}>장바구니</Link>
+              <Link to={""}>장바구니</Link>
               <Link>관심상품</Link>
             </div>
           </div>

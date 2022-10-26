@@ -8,11 +8,11 @@ import {
   ImgBox,
   RadioButton,
 } from '../../common/component';
-import button, { BasicButton } from '../../common/button';
+import { BasicButton } from '../../common/button';
 
 const MainBox = styled.div`
   width: 843px;
-  padding: 180px 0 30px 0;
+  padding: 70px 0 30px 0;
   display: flex;
   flex-direction: column;
   & > form > h1 {
@@ -181,8 +181,19 @@ const NewProductForm = () => {
           </InputDivBox>
         </ColumnBox>
         <div>
-          <BasicButton>수정</BasicButton>
-          <BasicButton>등록</BasicButton>
+          <BasicButton
+            bgColor={({ theme }) => theme.realWhite}
+            color={({ theme }) => theme.lightblack}
+            border='1px solid'
+            fontFamily='SCD-6'
+            fontSize='1.8rem'
+            borderRadius='3px'
+          >
+            수정
+          </BasicButton>
+          <BasicButton fontFamily='SCD-6' fontSize='1.8rem' borderRadius='3px'>
+            등록
+          </BasicButton>
         </div>
       </form>
     </MainBox>

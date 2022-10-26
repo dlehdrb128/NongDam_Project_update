@@ -7,16 +7,17 @@ import styled from 'styled-components';
  */
 
 export const BasicButton = styled.button`
-  width: ${(props) => props.width || "200px"};
-  height: ${(props) => props.height || "50px"};
-  border: none;
+  width: ${(props) => props.width || '200px'};
+  height: ${(props) => props.height || '50px'};
+  border: ${(props) => props.border || 'none'};
+  border-radius: ${(props) => props.borderRadius || 'none'};
   background-color: ${(props) => props.bgColor || `${props.theme.green}`};
   color: ${(props) => props.color || `${props.theme.realWhite}`};
   font-size: ${(props) => props.fontSize || '1.5rem'};
   font-family: ${(props) => props.fontFamily || 'SCD-5'};
   cursor: pointer;
   &:hover {
-    background-color: ${(props) => props.hoverBgColor || "none"};
+    background-color: ${(props) => props.hoverBgColor || 'none'};
   }
 `;
 
@@ -37,7 +38,7 @@ export const SmallButton = styled.button`
   cursor: pointer;
 `;
 export const MainButton = styled.button`
-  width: ${(props) => props.width || "250px"};
+  width: ${(props) => props.width || '250px'};
   height: 80px;
   border: none;
   border-radius: 10px;

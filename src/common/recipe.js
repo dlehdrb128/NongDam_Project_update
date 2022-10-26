@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// 힝
 export const PostList = styled.div`
   /* 낱개 게시글 설정 */
   color: ${(props) => props.color || `${props.theme.lightblack}`};

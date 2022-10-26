@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import MainLatestProduct from "./MainLatestProduct/MainLatestProduct";
+import MainLogo from "./MainLogo/MainLogo";
+import MainArticle from "./MainArticle/MainArticle";
+import MainEventMarket from "./MainEventMarket/MainEventMarket";
+import MainReview from "./MainReview/MainReview";
+import Remocon from "../../LayOut/Remocon";
 
 // 홈페이지
 const MainBox = styled.main`
@@ -6,19 +12,19 @@ const MainBox = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  div {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-  }
 `;
 
 const HomePage = () => {
   return (
     <>
-      <div>
-        <MainBox>상호</MainBox>
-      </div>
+      <MainBox>
+        <MainLogo></MainLogo>
+        <MainArticle></MainArticle>
+        <MainLatestProduct></MainLatestProduct>
+        <MainEventMarket></MainEventMarket>
+        <MainReview></MainReview>
+        <Remocon></Remocon>
+      </MainBox>
     </>
   );
 };

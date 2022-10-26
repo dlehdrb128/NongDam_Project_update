@@ -25,6 +25,7 @@ import Mypage from "../Pages/MyPage/MyPage";
 // import Test2 from '../Pages/Recipe/recipe';
 // import UploadTest from "../Pages/uploadTest/index";
 
+
 import './App.css';
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
           {/* <Route path="/upload" element={<UploadTest />}></Route> */}
           <Route element={<Footer />} />
         </Route>
-      </Routes>
+      </Routes >
     </>
   );
 }

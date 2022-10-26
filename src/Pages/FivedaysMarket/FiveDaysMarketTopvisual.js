@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Countdown from "./Countdown";
+import Countdown from "../../common/Countdown";
 
 //탑 비주얼 컨테이너(이미지/사이즈/위치(센터링),백그라운드,z-index조정)
 const FivedaysmakretTopvisual = styled.div`

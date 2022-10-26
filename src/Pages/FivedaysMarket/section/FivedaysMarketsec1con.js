@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FivedaysMaps from "./FivedaysMap";
+import FivedaysMaps from "../../../common/Map";
 
 // 섹션1 콘텐츠 컨테이너(너비,위치,그림자 조정)
 const Section1con = styled.div`

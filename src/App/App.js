@@ -12,11 +12,11 @@ import Intro from "../Pages/Intro/Intro";
 // import Login from '../Pages/Login/login';
 // import NewProductMain from '../Pages/NewProduct/NewProductMain';
 // import NewLogin from "../Pages/Login/newLogin";
-// import Mypage from "../Pages/MyPage/MyPage";
+import Mypage from "../Pages/MyPage/MyPage";
 // import OrderDetail from "../Pages/Order/OrderDetail";
 // import ProductPage from '../Pages/ProductPage/ProductPage';
 // import Recipe from '../Pages/Recipe/recipe';
-// import RecipeCreateReview from '../Pages/Recipe/recipeCreateReview';
+// import RecipeCreateReview from '../Pages/Rec ipe/recipeCreateReview';
 // import RecipeReview from '../Pages/Recipe/recipeReview';
 // import Store from "../Pages/Store/Store";
 // import SignUp from '../Pages/SignUp/signUp';
@@ -42,7 +42,7 @@ function App() {
           <Route path="/intro" element={<Intro />}></Route>
           {/* <Route path="/login" element={<Login />}></Route> */}
           {/* <Route path="/newLogin" element={<NewLogin />}></Route> */}
-          {/* <Route path="/mypage" element={<Mypage />}></Route> */}
+          <Route path="/mypage" element={<Mypage />}></Route>
           {/* <Route path="/orderDetail/:productId" element={<OrderDetail />}></Route> */}
           {/* <Route path="/product/:category" element={<AllProduct />}></Route> */}
           {/* <Route path='/product/detail/:id' element={<ProductPage />}></Route> */}

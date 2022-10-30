@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import AdminBox from "./AdminBox";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // 전체 감싼 메인 박스 ( 전체화면 )
 const MainBox = styled.div`
@@ -56,6 +59,22 @@ const MainBox = styled.div`
 `;
 
 const AdminMain = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const request = async () => {
+      try {
+        await axios.get("http://localhost:8080/login/admincheck", {
+          withCredentials: true,
+        });
+      } catch (error) {
+        alert(error.response.data.statusMessage);
+        navigate("/");
+      }
+    };
+    request();
+  }, []);
+
   const componentData = [
     {
       link: "create",
@@ -110,41 +129,6 @@ const AdminMain = () => {
             </Link>
           );
         })}
-
-        {/* <Link to='create'>
-          <AdminBox
-            src='http://localhost:8080/icon/Admin_icon1.png'
-            name='스토어개설'
-            content='기본 스토어 개설'
-          ></AdminBox>
-        </Link>
-        <AdminBox
-          src='http://localhost:8080/icon/Admin_icon2.png'
-          name='스토어관리'
-          content='기본 스토어 관리'
-        ></AdminBox>
-        <Link to='newproduct'>
-          <AdminBox
-            src='http://localhost:8080/icon/Admin_icon3.png'
-            name='상품관리'
-            content='상품등록, 수정'
-          ></AdminBox>
-        </Link>
-        <AdminBox
-          src='http://localhost:8080/icon/Admin_icon4.png'
-          name='게시판관리'
-          content='공지사항, 후기 관련'
-        ></AdminBox>
-        <AdminBox
-          src='http://localhost:8080/icon/Admin_icon5.png'
-          name='정산'
-          content='판매현황, 금액 관리'
-        ></AdminBox>
-        <AdminBox
-          src='http://localhost:8080/icon/Admin_icon6.png'
-          name='마이페이지'
-          content='나의 회원정보 수정'
-        ></AdminBox>*/}
       </div>
     </MainBox>
   );

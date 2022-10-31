@@ -12,7 +12,7 @@ const MainBox = styled.div`
 const StoreOpenMain = () => {
   return (
     <MainBox>
-      <SetSidemenu Text={"스토어 관리"}></SetSidemenu>;
+      <SetSidemenu Text={"스토어 정보"}></SetSidemenu>;
       <StoreOpenForm></StoreOpenForm>;
     </MainBox>
   );

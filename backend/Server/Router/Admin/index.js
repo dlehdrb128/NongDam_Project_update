@@ -25,13 +25,14 @@ const upload = multer({
 });
 
 router.get('/storeOpen', (req, res) => {
-  res.send(' 연동쓰');
-  console.log('연동');
+  connection.query(`select * from admin_store;`, (error, row, field) => {
+    if (error) throw error;
+    res.send(row);
+  });
 });
 
 router.post('/storeOpen', (req, res) => {
   console.log(req.body);
-  console.log(req.file);
   const {
     storeName,
     storeCeophone,
@@ -106,14 +107,26 @@ router.post('/newProduct', (req, res) => {
     productImage,
   } = req.body;
 
-  const newproductSQL = `INSERT INTO product (product_key,user_key,user_auth, product_name, product_local,product_local_eng,product_price,
-    product_image,
-    product_discount_set,product_discount_percent,product_discount_start,product_discount_end) VALUES (null,12,'사업자','${productName}','${productLocal}','${productLocalEng}',${productPrice},'${productImage}',${productDiscountSet},${ProductDiscountPercent},${productDiscountStart},${productDiscountEnd});`;
+  // product_key 기준으로 desc 내림차순 으로
+  // product테이블에 product_key 컬럼을 product_key기준으로 내림차순으로 1개
+  connection.query(
+    'select product_key from product order by product_key desc limit 1',
+    (err, row1, field) => {
+      if (err) throw err;
+      console.log(row1);
+      const newproductSQL = `INSERT INTO product (product_key,user_key,user_auth, product_name, product_local,product_local_eng,product_price,
+      product_image,
+      product_discount_set,product_discount_percent) VALUES (null,12,'사업자','${productName}','${productLocal}','${productLocalEng}',${productPrice},'${productImage}',${productDiscountSet},${ProductDiscountPercent});
+      INSERT INTO admin_discount_date VALUES(null,${
+        row1[0].product_key + 1
+      },12,'사업자',${productDiscountStart},${productDiscountEnd});`;
 
-  connection.query(newproductSQL, (err, row, fild) => {
-    if (err) throw err;
-    console.log(row);
-  });
+      connection.query(newproductSQL, (err, row2, fild) => {
+        if (err) throw err;
+        console.log(row2);
+      });
+    }
+  );
 
   // res.json({ status: '상품 등록 완료' });
 });
@@ -122,4 +135,5 @@ router.post('/newProduct', (req, res) => {
 router.post('/newProductImage', upload_product.single('img'), (req, res) => {
   res.json({ imgPath: req.file.filename });
 });
+
 module.exports = router;

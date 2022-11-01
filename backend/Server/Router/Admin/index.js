@@ -105,6 +105,7 @@ router.post('/newProduct', (req, res) => {
     productDiscountStart,
     productDiscountEnd,
     productImage,
+    productDetail,
   } = req.body;
 
   // product_key 기준으로 desc 내림차순 으로
@@ -115,8 +116,8 @@ router.post('/newProduct', (req, res) => {
       if (err) throw err;
       console.log(row1);
       const newproductSQL = `INSERT INTO product (product_key,user_key,user_auth, product_name, product_local,product_local_eng,product_price,
-      product_image,
-      product_discount_set,product_discount_percent) VALUES (null,12,'사업자','${productName}','${productLocal}','${productLocalEng}',${productPrice},'${productImage}',${productDiscountSet},${ProductDiscountPercent});
+      product_image,product_detail,
+      product_discount_set,product_discount_percent) VALUES (null,12,'사업자','${productName}','${productLocal}','${productLocalEng}',${productPrice},'${productImage}','${productDetail}',${productDiscountSet},${ProductDiscountPercent});
       INSERT INTO admin_discount_date VALUES(null,${
         row1[0].product_key + 1
       },12,'사업자',${productDiscountStart},${productDiscountEnd});`;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ContentBox = styled.div`
   width: inherit;
@@ -11,7 +11,7 @@ const ContentBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -20,7 +20,7 @@ const ContentBox = styled.div`
     // span있는거만 적용됨
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -33,7 +33,7 @@ const ContentBox = styled.div`
     border-left: 1px solid ${({ theme }) => theme.liglightgray};
     // 기입내용 input 박스 설정
     & > input {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 300px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -44,7 +44,7 @@ const ContentBox = styled.div`
     //  input박스 뒤에 따로 특이사항 붙는 부분
     // span 추가해서 설정하면되고, 없어도 상관없음
     & > span {
-      font-family: "SCD-3";
+      font-family: 'SCD-3';
       font-size: 1.3rem;
       padding-left: 5px;
     }
@@ -63,7 +63,7 @@ const StoreDescBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -72,7 +72,7 @@ const StoreDescBox = styled.div`
     // span있는거만 적용됨
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -85,7 +85,7 @@ const StoreDescBox = styled.div`
     border-left: 1px solid ${({ theme }) => theme.liglightgray};
     // 기입내용 input 박스 설정
     & > input {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 300px;
       height: 150px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -96,7 +96,7 @@ const StoreDescBox = styled.div`
     //  input박스 뒤에 따로 특이사항 붙는 부분
     // span 추가해서 설정하면되고, 없어도 상관없음
     & > span {
-      font-family: "SCD-3";
+      font-family: 'SCD-3';
       font-size: 1.3rem;
       padding-left: 5px;
     }
@@ -115,7 +115,7 @@ const BusinessAdd = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -123,7 +123,7 @@ const BusinessAdd = styled.div`
     // 이거 역시 필수기입내용 * 표시
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -137,7 +137,7 @@ const BusinessAdd = styled.div`
     justify-content: space-between;
     // 우편번호 창
     & > div > input {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 300px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -150,7 +150,7 @@ const BusinessAdd = styled.div`
       width: 120px;
       height: 40px;
       font-size: 1.5rem;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       color: ${({ theme }) => theme.realWhite};
       background-color: ${({ theme }) => theme.green};
       border: none;
@@ -161,7 +161,7 @@ const BusinessAdd = styled.div`
     }
     // 전체주와 나머지 주소 받을 input
     & > input {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 300px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -182,7 +182,7 @@ const ImgBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     display: flex;
     align-items: center;
     text-align: left;
@@ -192,7 +192,7 @@ const ImgBox = styled.div`
     // 필수기입사항
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -220,12 +220,12 @@ const ImgBox = styled.div`
         & > img {
           width: 100%;
           height: 100%;
-          margin: "auto";
+          margin: 'auto';
         }
       }
       // 이미지 권장 사이즈 안내
       & > p {
-        font-family: "SCD-4";
+        font-family: 'SCD-4';
         text-align: center;
         font-size: 1.5rem;
       }
@@ -247,7 +247,7 @@ const ImgBox = styled.div`
         color: ${({ theme }) => theme.realWhite};
         text-align: center;
         border-radius: 3px;
-        font-family: "SCD-6";
+        font-family: 'SCD-6';
         font-size: 1.5rem;
         display: flex;
         justify-content: center;
@@ -256,7 +256,7 @@ const ImgBox = styled.div`
       }
       // 등록이미지 안내
       & > p {
-        font-family: "SCD-5";
+        font-family: 'SCD-5';
         font-size: 1.3rem;
         padding-top: 5px;
       }
@@ -275,7 +275,7 @@ const TelBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -283,7 +283,7 @@ const TelBox = styled.div`
     // *로 된 필수입력사항
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -296,7 +296,7 @@ const TelBox = styled.div`
     border-left: 1px solid ${({ theme }) => theme.lightblack};
     // 번호의 맨 앞자리 선택박스
     & > select {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 100px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -306,7 +306,7 @@ const TelBox = styled.div`
     }
     // 전화번호 개인 입력창
     & > input {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 100px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -316,7 +316,7 @@ const TelBox = styled.div`
     }
     // 전화번호 사이사이 - 표시
     & > span {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       padding: 0 10px 0 10px;
       font-size: 1.5rem;
     }
@@ -324,7 +324,7 @@ const TelBox = styled.div`
     & > button {
       width: 120px;
       height: 40px;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
       color: ${({ theme }) => theme.realWhite};
       background-color: ${({ theme }) => theme.green};
@@ -349,7 +349,7 @@ const RadioBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -357,7 +357,7 @@ const RadioBox = styled.div`
     // * 표시 필수입력사항
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -377,7 +377,7 @@ const RadioBox = styled.div`
     // 체크되면 달라지는 스타일링
     // 라디오 버튼의 내용
     & > label {
-      font-family: "SCD-3";
+      font-family: 'SCD-3';
       font-size: 1.3rem;
       padding: 0 20px 0 5px;
     }
@@ -385,7 +385,7 @@ const RadioBox = styled.div`
 `;
 const DetailBox = styled.div`
   width: inherit;
-  height: 764px;
+  height: 494px;
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.lightblack};
@@ -393,7 +393,7 @@ const DetailBox = styled.div`
     width: inherit;
     height: 85px;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
@@ -401,13 +401,13 @@ const DetailBox = styled.div`
     // 필수입력사항
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
   & > div {
     width: inherit;
-    height: 680px;
+    height: 390px;
     border-bottom: 1.5px solid ${({ theme }) => theme.lightblak};
   }
 `;
@@ -426,14 +426,14 @@ const SelectBox = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
     border-bottom: 1px solid ${({ theme }) => theme.lightgray};
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -448,7 +448,7 @@ const SelectBox = styled.div`
 
     // select박스 부분
     & > select {
-      font-family: "SCD-4";
+      font-family: 'SCD-4';
       width: 100px;
       height: 40px;
       border: 1px solid ${({ theme }) => theme.gray};
@@ -472,14 +472,14 @@ const PeriodSet = styled.div`
     width: 141px;
     height: inherit;
     font-size: 1.5rem;
-    font-family: "SCD-6";
+    font-family: 'SCD-6';
     text-align: left;
     padding: 30px 0 30px 18px;
     background-color: ${({ theme }) => theme.white};
     border-bottom: 0.1rem solid ${({ theme }) => theme.lightgray};
     & > span {
       color: red;
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       font-size: 1.5rem;
     }
   }
@@ -508,7 +508,7 @@ const PeriodSet = styled.div`
           width: 187px;
           height: 40px;
           border-radius: 3px;
-          font-family: "SCD-3";
+          font-family: 'SCD-3';
           font-size: 1.3rem;
           padding: 5px;
           margin-right: 10px;
@@ -516,7 +516,7 @@ const PeriodSet = styled.div`
       }
       // select 스타일링
       & > select {
-        font-family: "SCD-3";
+        font-family: 'SCD-3';
         width: 68px;
         height: 40px;
         border: 1px solid ${({ theme }) => theme.gray};
@@ -527,7 +527,7 @@ const PeriodSet = styled.div`
       }
       // select 박스 뒤에 글자들 ex)시, 분
       & > span {
-        font-family: "SCD-3";
+        font-family: 'SCD-3';
         font-size: 1.5rem;
         margin-right: 10px;
       }

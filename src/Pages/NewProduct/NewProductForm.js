@@ -7,9 +7,14 @@ import {
   SelectBox,
   PeriodSet,
 } from '../../common/Form';
+import './Editor.css';
 import { BasicButton } from '../../common/button';
 import { useState, useRef } from 'react';
 import axios from 'axios';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+// ! import ReactHtmlParser from 'react-html-parser';
+// ! 제품 상세페이지 불러오는 곳에 ReactHtmlParser()안에 데이터 받아야합니다.
 
 // 폼제목과 폼을 메인박스로 묶었다
 const MainBox = styled.div`
@@ -65,6 +70,7 @@ const NewProductForm = () => {
     endDate: '',
     productLocal: '경기도',
   });
+  const [editorContent, setEditorContent] = useState('');
 
   const onchangeRegion = (e) => {
     setRegionEng(e.target.value);
@@ -96,7 +102,7 @@ const NewProductForm = () => {
       };
     }
   };
-  console.log(imgPath);
+  //console.log(imgPath);
 
   const onchange = (e) => {
     const { value, name } = e.target;
@@ -171,7 +177,9 @@ const NewProductForm = () => {
     productDiscountEnd:
       sale === true ? `'${endDate} ${endHour}:${endMinute}:00'` : null,
     productImage: imgPath,
+    productDetail: editorContent,
   };
+  //console.log(data);
 
   const onclick = () => {
     axios.post('http://localhost:8080/admin/newProduct', data);
@@ -273,7 +281,27 @@ const NewProductForm = () => {
               상세페이지
               <span> *</span>
             </h2>
-            <div></div>
+            <div>
+              <CKEditor
+                editor={ClassicEditor}
+                onReady={(editor) => {
+                  // You can store the "editor" and use when it is needed.
+                  //console.log('Editor is ready to use!', editor);
+                }}
+                onChange={(event, editor) => {
+                  const data = editor.getData();
+                  // console.log({ event, editor, data });
+                  setEditorContent(data);
+                  //console.log(data);
+                }}
+                onBlur={(event, editor) => {
+                  //console.log('Blur.', editor);
+                }}
+                onFocus={(event, editor) => {
+                  //console.log('Focus.', editor);
+                }}
+              />
+            </div>
           </DetailBox>
         </div>
         <h1>할인 적용</h1>

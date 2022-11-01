@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   ContentBox,
   StoreDescBox,
@@ -6,12 +6,13 @@ import {
   RadioBox,
   BusinessAdd,
   ImgBox,
-} from "../../common/Form";
-import { BasicButton } from "../../common/button";
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+} from '../../common/Form';
+import { BasicButton } from '../../common/button';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 // 메인박스로 묶음
 const MainBox = styled.div`
@@ -23,7 +24,7 @@ const MainBox = styled.div`
   & > form {
     // 스토어정보, 고객센터 정보안내 h1 스타일링
     & > h1 {
-      font-family: "SCD-6";
+      font-family: 'SCD-6';
       color: ${({ theme }) => theme.lightblack};
       font-size: 2.5rem;
       padding-bottom: 15px;
@@ -52,11 +53,35 @@ const MainBox = styled.div`
 const StoreOpenForm = () => {
   const imgSrc = useRef();
   const navigate = useNavigate();
-
-  const [img, setImg] = useState("");
-  const [imagePath, setImagePath] = useState("");
-
-  console.log(img);
+  const [radioCheck, setradioCheck] = useState();
+  const [img, setImg] = useState('');
+  const [imagePath, setImagePath] = useState('');
+  const [inputData, setInputData] = useState({
+    storeName: '',
+    mobilePhone: '',
+    email: '',
+    name: '',
+    address1: '',
+    address2: '',
+    address3: '',
+    huntingLine1: '02',
+    huntingLine2: '',
+    huntingLine3: '',
+    mobile1: '010',
+    mobile2: '',
+    mobile3: '',
+    receiveEmail: '',
+    outgoingEmail: '',
+    csTel1: '02',
+    csTel2: '',
+    csTel3: '',
+    csEmail: '',
+    faxTel1: '02',
+    faxTel2: '',
+    faxTel3: '',
+    csHours: '',
+    storeDesc: '',
+  });
 
   const onChangeFile = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -67,12 +92,12 @@ const StoreOpenForm = () => {
 
       reader.onload = async (e) => {
         const formData = new FormData();
-        formData.append("img", save);
+        formData.append('img', save);
 
         let URL = `http://localhost:8080/admin/storeImage`;
         const request = await axios.post(URL, formData, {
           headers: {
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         });
 
@@ -82,61 +107,34 @@ const StoreOpenForm = () => {
     }
   };
 
-  console.log(imagePath);
+  //console.log(imagePath);
 
-  const [radioCheck, setradioCheck] = useState();
   const onChangeRadio = (e) => {
     setradioCheck(e.target.value);
   };
 
   const firstTelList = [
-    "02",
-    "031",
-    "032",
-    "033",
-    "041",
-    "042",
-    "043",
-    "044",
-    "051",
-    "052",
-    "054",
-    "055",
-    "061",
-    "062",
-    "063",
-    "064",
-    "070",
-    "010",
+    '02',
+    '031',
+    '032',
+    '033',
+    '041',
+    '042',
+    '043',
+    '044',
+    '051',
+    '052',
+    '054',
+    '055',
+    '061',
+    '062',
+    '063',
+    '064',
+    '070',
+    '010',
   ];
 
-  const firstMobileList = ["010", "011", "016", "017", "018", "019", "070"];
-  const [inputData, setInputData] = useState({
-    storeName: "",
-    mobilePhone: "",
-    email: "",
-    name: "",
-    address1: "",
-    address2: "",
-    address3: "",
-    huntingLine1: "02",
-    huntingLine2: "",
-    huntingLine3: "",
-    mobile1: "010",
-    mobile2: "",
-    mobile3: "",
-    receiveEmail: "",
-    outgoingEmail: "",
-    csTel1: "02",
-    csTel2: "",
-    csTel3: "",
-    csEmail: "",
-    faxTel1: "02",
-    faxTel2: "",
-    faxTel3: "",
-    csHours: "",
-    storeDesc: "",
-  });
+  const firstMobileList = ['010', '011', '016', '017', '018', '019', '070'];
 
   const {
     storeName,
@@ -188,14 +186,14 @@ const StoreOpenForm = () => {
     storeCsEmail: csEmail,
     storeFax: `${faxTel1}-${faxTel2}-${faxTel3}`,
     storeCsTime: csHours,
-    storeBusiness: radioCheck === "true" ? 1 : 0,
+    storeBusiness: radioCheck === 'true' ? 1 : 0,
     storeDesc: storeDesc,
   };
 
   const onClick = (e) => {
-    axios.post("http://localhost:8080/admin/storeOpen", data);
-    alert("스토어 개설을 하였습니다!");
-    navigate("/admin");
+    axios.post('http://localhost:8080/admin/storeOpen', data);
+    alert('스토어 개설을 하였습니다!');
+    navigate('/admin');
   };
 
   return (
@@ -213,7 +211,7 @@ const StoreOpenForm = () => {
               <span> *</span>
             </h2>
             <div>
-              <input type="text" onChange={onchange} name="storeName"></input>
+              <input type='text' onChange={onchange} name='storeName'></input>
             </div>
           </ContentBox>
           <ContentBox>
@@ -221,7 +219,7 @@ const StoreOpenForm = () => {
               대표 휴대전화<span> *</span>
             </h2>
             <div>
-              <input type="tel" onChange={onchange} name="mobilePhone"></input>
+              <input type='tel' onChange={onchange} name='mobilePhone'></input>
             </div>
           </ContentBox>
           <ContentBox>
@@ -229,7 +227,7 @@ const StoreOpenForm = () => {
               대표 이메일<span> *</span>
             </h2>
             <div>
-              <input type="email" onChange={onchange} name="email"></input>
+              <input type='email' onChange={onchange} name='email'></input>
             </div>
           </ContentBox>
           <ContentBox>
@@ -237,7 +235,7 @@ const StoreOpenForm = () => {
               이름<span> *</span>
             </h2>
             <div>
-              <input type="text" onChange={onchange} name="name"></input>
+              <input type='text' onChange={onchange} name='name'></input>
             </div>
           </ContentBox>
           <BusinessAdd>
@@ -248,20 +246,20 @@ const StoreOpenForm = () => {
               <div>
                 <input
                   onChange={onchange}
-                  name="address1"
-                  placeholder="우편번호"
+                  name='address1'
+                  placeholder='우편번호'
                 ></input>
                 <button>주소검색</button>
               </div>
               <input
                 onChange={onchange}
-                name="address2"
-                placeholder="기본주소"
+                name='address2'
+                placeholder='기본주소'
               ></input>
               <input
                 onChange={onchange}
-                name="address3"
-                placeholder="나머지 주소(선택 입력 가능)"
+                name='address3'
+                placeholder='나머지 주소(선택 입력 가능)'
               ></input>
             </div>
           </BusinessAdd>
@@ -274,18 +272,18 @@ const StoreOpenForm = () => {
                 <div>
                   {img ? (
                     <img
-                      src=""
-                      alt=""
+                      src=''
+                      alt=''
                       ref={imgSrc}
-                      style={{ borderRadius: "3px" }}
+                      style={{ borderRadius: '3px' }}
                     />
                   ) : (
                     <div
                       style={{
-                        width: "155px",
-                        height: "155px",
-                        backgroundColor: "gray",
-                        borderRadius: "3px",
+                        width: '155px',
+                        height: '155px',
+                        backgroundColor: 'gray',
+                        borderRadius: '3px',
                       }}
                     ></div>
                   )}
@@ -294,14 +292,14 @@ const StoreOpenForm = () => {
               </div>
               <div>
                 <input
-                  type="file"
-                  id="input-file"
-                  accept="image/jpeg,gif,png,jpg"
-                  style={{ display: "none" }}
+                  type='file'
+                  id='input-file'
+                  accept='image/jpeg,gif,png,jpg'
+                  style={{ display: 'none' }}
                   onChange={onChangeFile}
-                  name={"img"}
+                  name={'img'}
                 ></input>
-                <label htmlFor="input-file">등록</label>
+                <label htmlFor='input-file'>등록</label>
                 <p>등록이미지 : 5M 이하 / gif, png, jpg(jpeg)</p>
               </div>
             </div>
@@ -310,11 +308,11 @@ const StoreOpenForm = () => {
             <h2>스토어 설명</h2>
             <div>
               <input
-                type="text"
+                type='text'
                 onChange={onchange}
-                name="storeDesc"
-                placeholder="200자 이내로 작성해주세요"
-                maxlength="200"
+                name='storeDesc'
+                placeholder='200자 이내로 작성해주세요'
+                maxLength='200'
               ></input>
             </div>
           </StoreDescBox>
@@ -324,7 +322,7 @@ const StoreOpenForm = () => {
               <select
                 onChange={onchange}
                 value={huntingLine1}
-                name="huntingLine1"
+                name='huntingLine1'
               >
                 {firstTelList.map((item) => (
                   <option value={item} key={item}>
@@ -333,9 +331,9 @@ const StoreOpenForm = () => {
                 ))}
               </select>
               <span>-</span>
-              <input onChange={onchange} name="huntingLine2"></input>
+              <input onChange={onchange} name='huntingLine2'></input>
               <span>-</span>
-              <input onChange={onchange} name="huntingLine3"></input>
+              <input onChange={onchange} name='huntingLine3'></input>
             </div>
           </TelBox>
           <TelBox>
@@ -344,7 +342,7 @@ const StoreOpenForm = () => {
               <span> *</span>
             </h2>
             <div>
-              <select onChange={onchange} value={mobile1} name="mobile1">
+              <select onChange={onchange} value={mobile1} name='mobile1'>
                 {firstMobileList.map((item) => (
                   <option value={item} key={item}>
                     {item}
@@ -352,9 +350,9 @@ const StoreOpenForm = () => {
                 ))}
               </select>
               <span>-</span>
-              <input onChange={onchange} name="mobile2"></input>
+              <input onChange={onchange} name='mobile2'></input>
               <span>-</span>
-              <input onChange={onchange} name="mobile3"></input>
+              <input onChange={onchange} name='mobile3'></input>
             </div>
           </TelBox>
           <ContentBox>
@@ -363,9 +361,9 @@ const StoreOpenForm = () => {
             </h2>
             <div>
               <input
-                type="email"
+                type='email'
                 onChange={onchange}
-                name="receiveEmail"
+                name='receiveEmail'
               ></input>
             </div>
           </ContentBox>
@@ -375,9 +373,9 @@ const StoreOpenForm = () => {
             </h2>
             <div>
               <input
-                type="email"
+                type='email'
                 onChange={onchange}
-                name="outgoingEmail"
+                name='outgoingEmail'
               ></input>
             </div>
           </ContentBox>
@@ -388,18 +386,18 @@ const StoreOpenForm = () => {
             </h2>
             <div>
               <input
-                type="radio"
-                name="radioCheck"
-                value="true"
-                checked={radioCheck === "true"}
+                type='radio'
+                name='radioCheck'
+                value='true'
+                checked={radioCheck === 'true'}
                 onChange={onChangeRadio}
               ></input>
               <label>신고함</label>
               <input
-                type="radio"
-                name="radioCheck"
-                value="false"
-                checked={radioCheck === "false"}
+                type='radio'
+                name='radioCheck'
+                value='false'
+                checked={radioCheck === 'false'}
                 onChange={onChangeRadio}
               ></input>
               <label>신고안함</label>
@@ -414,7 +412,7 @@ const StoreOpenForm = () => {
               <span> *</span>
             </h2>
             <div>
-              <select onChange={onchange} value={csTel1} name="csTel1">
+              <select onChange={onchange} value={csTel1} name='csTel1'>
                 {firstTelList.map((item) => (
                   <option value={item} key={item}>
                     {item}
@@ -422,9 +420,9 @@ const StoreOpenForm = () => {
                 ))}
               </select>
               <span>-</span>
-              <input onChange={onchange} name="csTel2"></input>
+              <input onChange={onchange} name='csTel2'></input>
               <span>-</span>
-              <input onChange={onchange} name="csTel3"></input>
+              <input onChange={onchange} name='csTel3'></input>
             </div>
           </TelBox>
           <ContentBox>
@@ -432,13 +430,13 @@ const StoreOpenForm = () => {
               상담 이메일<span> *</span>
             </h2>
             <div>
-              <input type="email" onChange={onchange} name="csEmail"></input>
+              <input type='email' onChange={onchange} name='csEmail'></input>
             </div>
           </ContentBox>
           <TelBox>
             <h2>팩스 전화</h2>
             <div>
-              <select onChange={onchange} value={faxTel1} name="faxTel1">
+              <select onChange={onchange} value={faxTel1} name='faxTel1'>
                 {firstTelList.map((item) => (
                   <option value={item} key={item}>
                     {item}
@@ -446,9 +444,9 @@ const StoreOpenForm = () => {
                 ))}
               </select>
               <span>-</span>
-              <input onChange={onchange} name="faxTel2"></input>
+              <input onChange={onchange} name='faxTel2'></input>
               <span>-</span>
-              <input onChange={onchange} name="faxTel3"></input>
+              <input onChange={onchange} name='faxTel3'></input>
             </div>
           </TelBox>
           <ContentBox>
@@ -456,7 +454,7 @@ const StoreOpenForm = () => {
               CS 운영시간<span> *</span>
             </h2>
             <div>
-              <input type="text" onChange={onchange} name="csHours"></input>
+              <input type='text' onChange={onchange} name='csHours'></input>
             </div>
           </ContentBox>
         </div>
@@ -464,14 +462,19 @@ const StoreOpenForm = () => {
           <BasicButton
             bgColor={({ theme }) => theme.realWhite}
             color={({ theme }) => theme.lightblack}
-            border="1px solid"
-            fontFamily="SCD-6"
-            fontSize="1.8rem"
-            borderRadius="3px"
+            border='1px solid'
+            fontFamily='SCD-6'
+            fontSize='1.8rem'
+            borderRadius='3px'
           >
             수정
           </BasicButton>
-          <BasicButton fontFamily="SCD-6" fontSize="1.8rem" borderRadius="3px">
+          <BasicButton
+            fontFamily='SCD-6'
+            fontSize='1.8rem'
+            borderRadius='3px'
+            onClick={onClick}
+          >
             등록
           </BasicButton>
         </div>

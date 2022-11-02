@@ -65,9 +65,9 @@ router.post('/storeOpen', (req, res) => {
 
 // 스토어 대표이미지 업로드
 router.post('/storeImage', upload.single('img'), (req, res) => {
-  console.log(req.file, 'aaaaaa');
-  console.log(req.body);
-  console.log(req.file.filename);
+  //console.log(req.file, 'aaaaaa');
+  //console.log(req.body);
+  //console.log(req.file.filename);
   res.json({ imagePath: req.file.filename });
 });
 
@@ -156,7 +156,7 @@ const productStorage = multer.diskStorage({
 
 const productUpload = multer({
   // (6)
-  productStorage,
+  storage: productStorage,
   fileFilter: (req, file, cb) => {
     if (['image/jpeg', 'image/jpg', 'image/png'].includes(file.mimetype))
       cb(null, true);
@@ -167,18 +167,10 @@ const productUpload = multer({
   },
 });
 
-router.post('/productImages', productUpload.single('img'), (req, res) => {
+router.post('/productImages', productUpload.single('file'), (req, res) => {
   // (7)
+  console.log('데이터');
   res.status(200).json(req.file);
 });
-
-
-
-router.use(
-  
-  '/uploads/product',
-  express.static(path.join(__dirname, 'uploads/product'))
-
-); // (8)
 
 module.exports = router;

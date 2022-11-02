@@ -72,8 +72,9 @@ const NewProductForm = () => {
   const [DATA, setDATA] = useState(undefined);
   const imgSrc = useRef();
   const [flag, setFlag] = useState(false);
-  const imgLink = 'http://localhost:8080/uploads/product';
-
+  const imgLink = 'http://localhost:8080/product';
+  //  dangerouslySetInnerHTML={{ __html: DATA[40].product_detail }}
+  // html로 파싱해야한다.
   useEffect(() => {
     const getData = async () => {
       let response = await axios.get('http://localhost:8080/admin/newProduct');
@@ -106,9 +107,12 @@ const NewProductForm = () => {
                   setFlag(true);
                   // setImage(res.data.filename);
                 }
-                resolve({
-                  default: `${imgLink}/${res.data.filename}`,
-                });
+                resolve(
+                  {
+                    default: `${imgLink}/${res.data.filename}`,
+                  },
+                  console.log(`${imgLink}/${res.data.filename}`)
+                );
               })
               .catch((err) => reject(err));
           });
@@ -241,8 +245,6 @@ const NewProductForm = () => {
 
   return (
     <MainBox>
-      <div>{DATA[38].product_name}</div>
-      <div dangerouslySetInnerHTML={{ __html: DATA[38].product_detail }}></div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -339,6 +341,7 @@ const NewProductForm = () => {
                 config={{
                   // (4)
                   extraPlugins: [uploadPlugin],
+                  placeholder: '상세페이지를 작성해주세요!',
                 }}
                 onReady={(editor) => {
                   // You can store the "editor" and use when it is needed.

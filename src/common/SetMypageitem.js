@@ -55,10 +55,9 @@ const SetItems = styled.div`
 `;
 
 const SetMypageitem = ({ data }) => {
-  let LinkUrl = `orderDetail/${data.user_key}`;
+  // let LinkUrl = `orderDetail/${data.user_key}`;
   return (
-    <Link to={LinkUrl}>
-      <BasicButton></BasicButton>
+    <Link to={''}>
       <SetItems>
         <div>
           <p>{data.date}</p>

@@ -73,7 +73,7 @@ const FivedaysMarektsec1con = ({ data }) => {
           {/* 내용 */}
           <p>{data && data[1][0].market_desc}</p>
         </div>
-        <FivedaysMaps></FivedaysMaps>
+        <FivedaysMaps data={data && data[1][0]}></FivedaysMaps>
       </div>
     </Section1con>
   );

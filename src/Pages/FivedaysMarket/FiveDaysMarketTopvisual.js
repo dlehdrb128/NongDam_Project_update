@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Countdown from "../../common/Countdown";
 
 //탑 비주얼 컨테이너(이미지/사이즈/위치(센터링),백그라운드,z-index조정)
 const FivedaysmakretTopvisual = styled.div`
@@ -33,16 +32,34 @@ const FivedaysmakretTopvisual = styled.div`
   }
 `;
 
-const FivedaysMakretTopvisual = () => {
+const FivedaysMakretTopvisual = ({ Local, Timedata }) => {
+  let locals
+  switch (Local[0]) {
+    case '충':
+      locals = '충청도'
+      break;
+    case '전':
+      locals = '전라도'
+      break;
+    case '경':
+      locals = '경상도'
+      break;
+    case '강':
+      locals = '강원도'
+      break;
+    default:
+      locals = '해당되는 지역이 없네요.'
+  }
+
   return (
     // 비주얼 컨테이너
     <FivedaysmakretTopvisual>
       {/* 타이틀 */}
       <h1>
-        오늘은 <span>충청,전라</span> 에서 왓슈~
+        오늘은 <span>{locals}</span> 에서 왓슈~
       </h1>
       {/* 카운트다운 */}
-      <Countdown></Countdown>
+      <p>다음지역까지 {Timedata.day}일 {Timedata.hour < 10 ? `0${Timedata.hour}` : Timedata.hour}시 {Timedata.min < 10 ? `0${Timedata.min}` : Timedata.min}분 {Timedata.sec < 10 ? `0${Timedata.sec}` : Timedata.sec}초</p>
     </FivedaysmakretTopvisual>
   );
 };

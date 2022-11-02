@@ -61,30 +61,6 @@ const Sidemenu = styled.div`
 `;
 
 const SetSidemenu = ({ Text }) => {
-  const [userData, setUserData] = useState();
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const getLogin = async () => {
-  //     try {
-  //       let response = await axios.get('http://localhost:8080/login/check', {
-  //         withCredentials: true,
-  //       });
-  //       console.log(response);
-  //       if (response.data.status === 201) {
-  //         setUserData(response.data.userInfo);
-  //       } else {
-  //         alert('로그인 하셔야 합니다');
-  //         navigate('/');
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getLogin();
-  // }, []);
-
-  // let cartUrl = `/cart/user/${userData.user_key}`;
 
   return (
     <Sidemenu>

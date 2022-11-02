@@ -12,7 +12,6 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import { useEffect } from 'react';
 
 // 메인박스로 묶음
 const MainBox = styled.div`

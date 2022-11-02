@@ -9,12 +9,10 @@ import {
 } from '../../common/Form';
 import './Editor.css';
 import { BasicButton } from '../../common/button';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-// ! import ReactHtmlParser from 'react-html-parser';
-// ! 제품 상세페이지 불러오는 곳에 ReactHtmlParser()안에 데이터 받아야합니다.
 
 // 폼제목과 폼을 메인박스로 묶었다
 const MainBox = styled.div`
@@ -71,14 +69,66 @@ const NewProductForm = () => {
     productLocal: '경기도',
   });
   const [editorContent, setEditorContent] = useState('');
+  const [DATA, setDATA] = useState(undefined);
+  const imgSrc = useRef();
+  const [flag, setFlag] = useState(false);
+  const imgLink = 'http://localhost:8080/uploads/product';
+
+  useEffect(() => {
+    const getData = async () => {
+      let response = await axios.get('http://localhost:8080/admin/newProduct');
+      setDATA(response.data);
+      console.log(response);
+    };
+    getData();
+  }, []);
+  // console.log(DATA[38].product_name);
+  // console.log(DATA[38].product_detail);
+
+  if (DATA === undefined) {
+    return null;
+  }
+
+  const customUploadAdapter = (loader) => {
+    // (2)
+    return {
+      upload() {
+        return new Promise((resolve, reject) => {
+          const data = new FormData();
+          loader.file.then((file) => {
+            data.append('name', file.name);
+            data.append('file', file);
+
+            axios
+              .post(`http://localhost:8080/admin/productImages`, data)
+              .then((res) => {
+                if (!flag) {
+                  setFlag(true);
+                  // setImage(res.data.filename);
+                }
+                resolve({
+                  default: `${imgLink}/${res.data.filename}`,
+                });
+              })
+              .catch((err) => reject(err));
+          });
+        });
+      },
+    };
+  };
+
+  function uploadPlugin(editor) {
+    // (3)
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+      return customUploadAdapter(loader);
+    };
+  }
 
   const onchangeRegion = (e) => {
     setRegionEng(e.target.value);
     setRegion(e.target[e.target.selectedIndex].text);
     //console.log(e.target[e.target.selectedIndex].text);
   };
-
-  const imgSrc = useRef();
 
   const onChangeFile = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -191,6 +241,8 @@ const NewProductForm = () => {
 
   return (
     <MainBox>
+      <div>{DATA[38].product_name}</div>
+      <div dangerouslySetInnerHTML={{ __html: DATA[38].product_detail }}></div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -284,6 +336,10 @@ const NewProductForm = () => {
             <div>
               <CKEditor
                 editor={ClassicEditor}
+                config={{
+                  // (4)
+                  extraPlugins: [uploadPlugin],
+                }}
                 onReady={(editor) => {
                   // You can store the "editor" and use when it is needed.
                   //console.log('Editor is ready to use!', editor);
@@ -292,13 +348,13 @@ const NewProductForm = () => {
                   const data = editor.getData();
                   // console.log({ event, editor, data });
                   setEditorContent(data);
-                  //console.log(data);
+                  console.log(data);
                 }}
                 onBlur={(event, editor) => {
-                  //console.log('Blur.', editor);
+                  // console.log(event, editor);
                 }}
                 onFocus={(event, editor) => {
-                  //console.log('Focus.', editor);
+                  // console.log('Focus.', editor);
                 }}
               />
             </div>

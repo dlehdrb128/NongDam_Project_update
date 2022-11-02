@@ -3,6 +3,8 @@ const router = express.Router();
 const connection = require('../../../db/db');
 const multer = require('multer');
 const path = require('path');
+const { v4: uuid } = require('uuid');
+const mime = require('mime-types');
 
 const upload = multer({
   // storage 어디에 저장할건지 , diskStorage 하드 디스크에 저장하겠다.
@@ -89,8 +91,10 @@ const upload_product = multer({
 });
 
 router.get('/newProduct', (req, res) => {
-  console.log('상품등록');
-  res.send('상품등록페이지');
+  connection.query(`select * from product;`, (error, row, field) => {
+    if (error) throw error;
+    res.send(row);
+  });
 });
 
 router.post('/newProduct', (req, res) => {
@@ -136,5 +140,45 @@ router.post('/newProduct', (req, res) => {
 router.post('/newProductImage', upload_product.single('img'), (req, res) => {
   res.json({ imgPath: req.file.filename });
 });
+
+// 상품등록 - 상세페이지 사진 업로드 과정
+const productStorage = multer.diskStorage({
+  // (2)
+  destination: (req, file, cb) => {
+    // (3)
+    cb(null, 'uploads/product');
+  },
+  filename: (req, file, cb) => {
+    // (4)
+    cb(null, `${uuid()}.${mime.extension(file.mimetype)}`); // (5)
+  },
+});
+
+const productUpload = multer({
+  // (6)
+  productStorage,
+  fileFilter: (req, file, cb) => {
+    if (['image/jpeg', 'image/jpg', 'image/png'].includes(file.mimetype))
+      cb(null, true);
+    else cb(new Error('해당 파일의 형식을 지원하지 않습니다.'), false);
+  },
+  limits: {
+    fileSize: 1024 * 1024 * 5,
+  },
+});
+
+router.post('/productImages', productUpload.single('img'), (req, res) => {
+  // (7)
+  res.status(200).json(req.file);
+});
+
+
+
+router.use(
+  
+  '/uploads/product',
+  express.static(path.join(__dirname, 'uploads/product'))
+
+); // (8)
 
 module.exports = router;

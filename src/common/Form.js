@@ -408,7 +408,7 @@ const DetailBox = styled.div`
   & > div {
     width: inherit;
     height: 390px;
-    border-bottom: 1.5px solid ${({ theme }) => theme.lightblak};
+    border-bottom: 1.5px solid ${({ theme }) => theme.lightgray};
   }
 `;
 
